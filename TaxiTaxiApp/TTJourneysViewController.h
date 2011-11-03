@@ -1,5 +1,5 @@
 //
-//  TTFirstViewController.h
+//  TTJourneysViewController.h
 //  TaxiTaxiApp
 //
 //  Created by Michael Wawra on 03/11/2011.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TTFirstViewController : UIViewController
+@interface TTJourneysViewController : UIViewController
 
 @end
