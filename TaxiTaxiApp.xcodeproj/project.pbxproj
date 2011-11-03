@@ -42,26 +42,26 @@
 		7A2E31BE14632939005DA431 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A2E31C014632939005DA431 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7A2E31C214632939005DA431 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7A2E31C614632939005DA431 /* TaxiTaxiApp-Info.plist */ = {isa = PBXFileReference; path = "TaxiTaxiApp-Info.plist"; sourceTree = "<group>"; };
+		7A2E31C614632939005DA431 /* TaxiTaxiApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TaxiTaxiApp-Info.plist"; sourceTree = "<group>"; };
 		7A2E31C814632939005DA431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7A2E31CA14632939005DA431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7A2E31CC14632939005DA431 /* TaxiTaxiApp-Prefix.pch */ = {isa = PBXFileReference; path = "TaxiTaxiApp-Prefix.pch"; sourceTree = "<group>"; };
-		7A2E31CD14632939005DA431 /* TTAppDelegate.h */ = {isa = PBXFileReference; path = TTAppDelegate.h; sourceTree = "<group>"; };
+		7A2E31CC14632939005DA431 /* TaxiTaxiApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaxiTaxiApp-Prefix.pch"; sourceTree = "<group>"; };
+		7A2E31CD14632939005DA431 /* TTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAppDelegate.h; sourceTree = "<group>"; };
 		7A2E31CE14632939005DA431 /* TTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
 		7A2E31D114632939005DA431 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		7A2E31D314632939005DA431 /* TTFirstViewController.h */ = {isa = PBXFileReference; path = TTFirstViewController.h; sourceTree = "<group>"; };
+		7A2E31D314632939005DA431 /* TTFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTFirstViewController.h; sourceTree = "<group>"; };
 		7A2E31D414632939005DA431 /* TTFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTFirstViewController.m; sourceTree = "<group>"; };
 		7A2E31D614632939005DA431 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		7A2E31D814632939005DA431 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		7A2E31DA14632939005DA431 /* TTSecondViewController.h */ = {isa = PBXFileReference; path = TTSecondViewController.h; sourceTree = "<group>"; };
+		7A2E31DA14632939005DA431 /* TTSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTSecondViewController.h; sourceTree = "<group>"; };
 		7A2E31DB14632939005DA431 /* TTSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTSecondViewController.m; sourceTree = "<group>"; };
 		7A2E31DD14632939005DA431 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		7A2E31DF14632939005DA431 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		7A2E31E614632939005DA431 /* TaxiTaxiAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaxiTaxiAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E31E714632939005DA431 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		7A2E31EF14632939005DA431 /* TaxiTaxiAppTests-Info.plist */ = {isa = PBXFileReference; path = "TaxiTaxiAppTests-Info.plist"; sourceTree = "<group>"; };
+		7A2E31EF14632939005DA431 /* TaxiTaxiAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TaxiTaxiAppTests-Info.plist"; sourceTree = "<group>"; };
 		7A2E31F114632939005DA431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7A2E31F314632939005DA431 /* TaxiTaxiAppTests.h */ = {isa = PBXFileReference; path = TaxiTaxiAppTests.h; sourceTree = "<group>"; };
+		7A2E31F314632939005DA431 /* TaxiTaxiAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaxiTaxiAppTests.h; sourceTree = "<group>"; };
 		7A2E31F41463293A005DA431 /* TaxiTaxiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaxiTaxiAppTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
