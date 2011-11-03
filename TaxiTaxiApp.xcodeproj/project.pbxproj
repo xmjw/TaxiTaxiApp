@@ -14,10 +14,10 @@
 		7A2E31CB14632939005DA431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E31CA14632939005DA431 /* main.m */; };
 		7A2E31CF14632939005DA431 /* TTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E31CE14632939005DA431 /* TTAppDelegate.m */; };
 		7A2E31D214632939005DA431 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E31D014632939005DA431 /* MainStoryboard.storyboard */; };
-		7A2E31D514632939005DA431 /* TTFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E31D414632939005DA431 /* TTFirstViewController.m */; };
+		7A2E31D514632939005DA431 /* TTFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E31D414632939005DA431 /* TTFriendsViewController.m */; };
 		7A2E31D714632939005DA431 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E31D614632939005DA431 /* first.png */; };
 		7A2E31D914632939005DA431 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E31D814632939005DA431 /* first@2x.png */; };
-		7A2E31DC14632939005DA431 /* TTSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E31DB14632939005DA431 /* TTSecondViewController.m */; };
+		7A2E31DC14632939005DA431 /* TTCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E31DB14632939005DA431 /* TTCheckinViewController.m */; };
 		7A2E31DE14632939005DA431 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E31DD14632939005DA431 /* second.png */; };
 		7A2E31E014632939005DA431 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E31DF14632939005DA431 /* second@2x.png */; };
 		7A2E31E814632939005DA431 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31E714632939005DA431 /* SenTestingKit.framework */; };
@@ -25,6 +25,9 @@
 		7A2E31EA14632939005DA431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31C014632939005DA431 /* Foundation.framework */; };
 		7A2E31F214632939005DA431 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E31F014632939005DA431 /* InfoPlist.strings */; };
 		7A2E31F51463293A005DA431 /* TaxiTaxiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E31F41463293A005DA431 /* TaxiTaxiAppTests.m */; };
+		7AE59D651463555A00CDECA9 /* TTJourneysViewControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D641463555A00CDECA9 /* TTJourneysViewControll.m */; };
+		7AE59D6A1463565800CDECA9 /* TTReceiptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */; };
+		7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,12 +52,12 @@
 		7A2E31CD14632939005DA431 /* TTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAppDelegate.h; sourceTree = "<group>"; };
 		7A2E31CE14632939005DA431 /* TTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
 		7A2E31D114632939005DA431 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		7A2E31D314632939005DA431 /* TTFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTFirstViewController.h; sourceTree = "<group>"; };
-		7A2E31D414632939005DA431 /* TTFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTFirstViewController.m; sourceTree = "<group>"; };
+		7A2E31D314632939005DA431 /* TTFriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTFriendsViewController.h; sourceTree = "<group>"; };
+		7A2E31D414632939005DA431 /* TTFriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTFriendsViewController.m; sourceTree = "<group>"; };
 		7A2E31D614632939005DA431 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		7A2E31D814632939005DA431 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		7A2E31DA14632939005DA431 /* TTSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTSecondViewController.h; sourceTree = "<group>"; };
-		7A2E31DB14632939005DA431 /* TTSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTSecondViewController.m; sourceTree = "<group>"; };
+		7A2E31DA14632939005DA431 /* TTCheckinViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTCheckinViewController.h; sourceTree = "<group>"; };
+		7A2E31DB14632939005DA431 /* TTCheckinViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTCheckinViewController.m; sourceTree = "<group>"; };
 		7A2E31DD14632939005DA431 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		7A2E31DF14632939005DA431 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		7A2E31E614632939005DA431 /* TaxiTaxiAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaxiTaxiAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +66,12 @@
 		7A2E31F114632939005DA431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7A2E31F314632939005DA431 /* TaxiTaxiAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaxiTaxiAppTests.h; sourceTree = "<group>"; };
 		7A2E31F41463293A005DA431 /* TaxiTaxiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaxiTaxiAppTests.m; sourceTree = "<group>"; };
+		7AE59D631463555A00CDECA9 /* TTJourneysViewControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneysViewControll.h; sourceTree = "<group>"; };
+		7AE59D641463555A00CDECA9 /* TTJourneysViewControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneysViewControll.m; sourceTree = "<group>"; };
+		7AE59D681463565800CDECA9 /* TTReceiptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTReceiptsViewController.h; sourceTree = "<group>"; };
+		7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTReceiptsViewController.m; sourceTree = "<group>"; };
+		7AE59D6B1463566D00CDECA9 /* TTMedalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMedalsViewController.h; sourceTree = "<group>"; };
+		7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMedalsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,15 +131,12 @@
 		7A2E31C414632939005DA431 /* TaxiTaxiApp */ = {
 			isa = PBXGroup;
 			children = (
+				7AE59D671463556300CDECA9 /* Views */,
 				7A2E31CD14632939005DA431 /* TTAppDelegate.h */,
 				7A2E31CE14632939005DA431 /* TTAppDelegate.m */,
 				7A2E31D014632939005DA431 /* MainStoryboard.storyboard */,
-				7A2E31D314632939005DA431 /* TTFirstViewController.h */,
-				7A2E31D414632939005DA431 /* TTFirstViewController.m */,
 				7A2E31D614632939005DA431 /* first.png */,
 				7A2E31D814632939005DA431 /* first@2x.png */,
-				7A2E31DA14632939005DA431 /* TTSecondViewController.h */,
-				7A2E31DB14632939005DA431 /* TTSecondViewController.m */,
 				7A2E31DD14632939005DA431 /* second.png */,
 				7A2E31DF14632939005DA431 /* second@2x.png */,
 				7A2E31C514632939005DA431 /* Supporting Files */,
@@ -166,6 +172,23 @@
 				7A2E31F014632939005DA431 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7AE59D671463556300CDECA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E31D314632939005DA431 /* TTFriendsViewController.h */,
+				7A2E31D414632939005DA431 /* TTFriendsViewController.m */,
+				7A2E31DA14632939005DA431 /* TTCheckinViewController.h */,
+				7A2E31DB14632939005DA431 /* TTCheckinViewController.m */,
+				7AE59D631463555A00CDECA9 /* TTJourneysViewControll.h */,
+				7AE59D641463555A00CDECA9 /* TTJourneysViewControll.m */,
+				7AE59D681463565800CDECA9 /* TTReceiptsViewController.h */,
+				7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */,
+				7AE59D6B1463566D00CDECA9 /* TTMedalsViewController.h */,
+				7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +304,11 @@
 			files = (
 				7A2E31CB14632939005DA431 /* main.m in Sources */,
 				7A2E31CF14632939005DA431 /* TTAppDelegate.m in Sources */,
-				7A2E31D514632939005DA431 /* TTFirstViewController.m in Sources */,
-				7A2E31DC14632939005DA431 /* TTSecondViewController.m in Sources */,
+				7A2E31D514632939005DA431 /* TTFriendsViewController.m in Sources */,
+				7A2E31DC14632939005DA431 /* TTCheckinViewController.m in Sources */,
+				7AE59D651463555A00CDECA9 /* TTJourneysViewControll.m in Sources */,
+				7AE59D6A1463565800CDECA9 /* TTReceiptsViewController.m in Sources */,
+				7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +478,7 @@
 				7A2E31FA1463293A005DA431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A2E31FB1463293A005DA431 /* Build configuration list for PBXNativeTarget "TaxiTaxiAppTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +487,7 @@
 				7A2E31FD1463293A005DA431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
