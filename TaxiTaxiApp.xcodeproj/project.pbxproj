@@ -131,14 +131,13 @@
 		7A2E31C414632939005DA431 /* TaxiTaxiApp */ = {
 			isa = PBXGroup;
 			children = (
-				7AE59D671463556300CDECA9 /* Views */,
+				7AE59D7114635B8D00CDECA9 /* Resources */,
+				7AE59D7014635B7D00CDECA9 /* Services */,
+				7AE59D6F14635B5C00CDECA9 /* Views */,
+				7AE59D6E14635B3D00CDECA9 /* Models */,
+				7AE59D671463556300CDECA9 /* Controls */,
 				7A2E31CD14632939005DA431 /* TTAppDelegate.h */,
 				7A2E31CE14632939005DA431 /* TTAppDelegate.m */,
-				7A2E31D014632939005DA431 /* MainStoryboard.storyboard */,
-				7A2E31D614632939005DA431 /* first.png */,
-				7A2E31D814632939005DA431 /* first@2x.png */,
-				7A2E31DD14632939005DA431 /* second.png */,
-				7A2E31DF14632939005DA431 /* second@2x.png */,
 				7A2E31C514632939005DA431 /* Supporting Files */,
 			);
 			path = TaxiTaxiApp;
@@ -174,7 +173,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7AE59D671463556300CDECA9 /* Views */ = {
+		7AE59D671463556300CDECA9 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
 				7A2E31D314632939005DA431 /* TTFriendsViewController.h */,
@@ -188,7 +187,48 @@
 				7AE59D6B1463566D00CDECA9 /* TTMedalsViewController.h */,
 				7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */,
 			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		7AE59D6E14635B3D00CDECA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7AE59D6F14635B5C00CDECA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E31D014632939005DA431 /* MainStoryboard.storyboard */,
+			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		7AE59D7014635B7D00CDECA9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		7AE59D7114635B8D00CDECA9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7AE59D7214635BA000CDECA9 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7AE59D7214635BA000CDECA9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E31D614632939005DA431 /* first.png */,
+				7A2E31D814632939005DA431 /* first@2x.png */,
+				7A2E31DD14632939005DA431 /* second.png */,
+				7A2E31DF14632939005DA431 /* second@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
