@@ -37,7 +37,7 @@
 		7A2E31EA14632939005DA431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31C014632939005DA431 /* Foundation.framework */; };
 		7A2E31F214632939005DA431 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E31F014632939005DA431 /* InfoPlist.strings */; };
 		7A2E31F51463293A005DA431 /* TaxiTaxiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E31F41463293A005DA431 /* TaxiTaxiAppTests.m */; };
-		7AE59D651463555A00CDECA9 /* TTJourneysViewControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D641463555A00CDECA9 /* TTJourneysViewControll.m */; };
+		7AE59D651463555A00CDECA9 /* TTJourneysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D641463555A00CDECA9 /* TTJourneysViewController.m */; };
 		7AE59D6A1463565800CDECA9 /* TTReceiptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */; };
 		7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */; };
 /* End PBXBuildFile section */
@@ -90,8 +90,8 @@
 		7A2E31F114632939005DA431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7A2E31F314632939005DA431 /* TaxiTaxiAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaxiTaxiAppTests.h; sourceTree = "<group>"; };
 		7A2E31F41463293A005DA431 /* TaxiTaxiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaxiTaxiAppTests.m; sourceTree = "<group>"; };
-		7AE59D631463555A00CDECA9 /* TTJourneysViewControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneysViewControll.h; sourceTree = "<group>"; };
-		7AE59D641463555A00CDECA9 /* TTJourneysViewControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneysViewControll.m; sourceTree = "<group>"; };
+		7AE59D631463555A00CDECA9 /* TTJourneysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TTJourneysViewController.h; sourceTree = "<group>"; };
+		7AE59D641463555A00CDECA9 /* TTJourneysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneysViewController.m; sourceTree = "<group>"; };
 		7AE59D681463565800CDECA9 /* TTReceiptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTReceiptsViewController.h; sourceTree = "<group>"; };
 		7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTReceiptsViewController.m; sourceTree = "<group>"; };
 		7AE59D6B1463566D00CDECA9 /* TTMedalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMedalsViewController.h; sourceTree = "<group>"; };
@@ -204,8 +204,8 @@
 				7A2E31D414632939005DA431 /* TTFriendsViewController.m */,
 				7A2E31DA14632939005DA431 /* TTCheckinViewController.h */,
 				7A2E31DB14632939005DA431 /* TTCheckinViewController.m */,
-				7AE59D631463555A00CDECA9 /* TTJourneysViewControll.h */,
-				7AE59D641463555A00CDECA9 /* TTJourneysViewControll.m */,
+				7AE59D631463555A00CDECA9 /* TTJourneysViewController.h */,
+				7AE59D641463555A00CDECA9 /* TTJourneysViewController.m */,
 				7AE59D681463565800CDECA9 /* TTReceiptsViewController.h */,
 				7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */,
 				7AE59D6B1463566D00CDECA9 /* TTMedalsViewController.h */,
@@ -394,7 +394,7 @@
 				7A2E31CF14632939005DA431 /* TTAppDelegate.m in Sources */,
 				7A2E31D514632939005DA431 /* TTFriendsViewController.m in Sources */,
 				7A2E31DC14632939005DA431 /* TTCheckinViewController.m in Sources */,
-				7AE59D651463555A00CDECA9 /* TTJourneysViewControll.m in Sources */,
+				7AE59D651463555A00CDECA9 /* TTJourneysViewController.m in Sources */,
 				7AE59D6A1463565800CDECA9 /* TTReceiptsViewController.m in Sources */,
 				7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */,
 			);
