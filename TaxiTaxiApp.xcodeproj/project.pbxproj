@@ -128,7 +128,6 @@
 		7A2E31AF14632938005DA431 = {
 			isa = PBXGroup;
 			children = (
-				14D9902F146C36C800DAE48F /* CoreLocation.framework */,
 				7A2E31C414632939005DA431 /* TaxiTaxiApp */,
 				7A2E31ED14632939005DA431 /* TaxiTaxiAppTests */,
 				7A2E31BD14632939005DA431 /* Frameworks */,
@@ -151,6 +150,7 @@
 				7A2E31BE14632939005DA431 /* UIKit.framework */,
 				7A2E31C014632939005DA431 /* Foundation.framework */,
 				7A2E31C214632939005DA431 /* CoreGraphics.framework */,
+				14D9902F146C36C800DAE48F /* CoreLocation.framework */,
 				7A2E31E714632939005DA431 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
