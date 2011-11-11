@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143799A1146D82610034C5EA /* cameraTabBarItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 1437999F146D82610034C5EA /* cameraTabBarItem.png */; };
+		143799A2146D82610034C5EA /* cameraTabBarItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 143799A0146D82610034C5EA /* cameraTabBarItem@2x.png */; };
 		14D9900F146C263900DAE48F /* badge.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D99005146C263900DAE48F /* badge.png */; };
 		14D99010146C263900DAE48F /* badge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D99006146C263900DAE48F /* badge@2x.png */; };
 		14D99011146C263900DAE48F /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D99007146C263900DAE48F /* car.png */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1437999F146D82610034C5EA /* cameraTabBarItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraTabBarItem.png; sourceTree = "<group>"; };
+		143799A0146D82610034C5EA /* cameraTabBarItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraTabBarItem@2x.png"; sourceTree = "<group>"; };
 		14D99005146C263900DAE48F /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge.png; sourceTree = "<group>"; };
 		14D99006146C263900DAE48F /* badge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badge@2x.png"; sourceTree = "<group>"; };
 		14D99007146C263900DAE48F /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 		7AE59D7214635BA000CDECA9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1437999F146D82610034C5EA /* cameraTabBarItem.png */,
+				143799A0146D82610034C5EA /* cameraTabBarItem@2x.png */,
 				14D99005146C263900DAE48F /* badge.png */,
 				14D99006146C263900DAE48F /* badge@2x.png */,
 				14D99007146C263900DAE48F /* car.png */,
@@ -360,6 +366,8 @@
 				14D99018146C263A00DAE48F /* user@2x.png in Resources */,
 				14D9901C146C266300DAE48F /* Icon.png in Resources */,
 				14D9901D146C266300DAE48F /* Icon@2x.png in Resources */,
+				143799A1146D82610034C5EA /* cameraTabBarItem.png in Resources */,
+				143799A2146D82610034C5EA /* cameraTabBarItem@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +509,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaxiTaxiApp/TaxiTaxiApp-Prefix.pch";
 				INFOPLIST_FILE = "TaxiTaxiApp/TaxiTaxiApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -512,7 +522,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaxiTaxiApp/TaxiTaxiApp-Prefix.pch";
 				INFOPLIST_FILE = "TaxiTaxiApp/TaxiTaxiApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

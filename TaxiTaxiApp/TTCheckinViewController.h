@@ -20,4 +20,6 @@
 
 @property (nonatomic, retain) CLLocation *currentLocation;
 
+-(void) addCenterButtonWithImage:(UIImage*)buttonImage highlightImage:(UIImage*)highlightImage;
+
 @end

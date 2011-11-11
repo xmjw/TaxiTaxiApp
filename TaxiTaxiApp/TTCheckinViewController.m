@@ -11,7 +11,6 @@
 @implementation TTCheckinViewController
 
 @synthesize currentLocation;
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -37,6 +36,9 @@
 {
     [super viewWillAppear:animated];
     
+    // Create custom UIButton and overlay it on center of the tab bar.
+    [self addCenterButtonWithImage:[UIImage imageNamed:@"cameraTabBarItem.png"] highlightImage:nil];
+    
     [latitudeLabel setText:@""];
     [longitudeLabel setText:@""];
     
@@ -56,6 +58,7 @@
     
     // Tell our manager to start looking for its location immediately
     [locationManager startUpdatingLocation];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -79,7 +82,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-#pragma mark Location
+#pragma mark - Location
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
@@ -109,5 +112,34 @@
     [locationManager stopUpdatingLocation];
     locationManager = nil;
 }
+
+#pragma mark - Custom Button
+
+// Create a custom UIButton and add it to the center of our tab bar
+-(void) addCenterButtonWithImage:(UIImage*)buttonImage highlightImage:(UIImage*)highlightImage
+{
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    button.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
+    [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [button setBackgroundImage:highlightImage forState:UIControlStateHighlighted];
+    
+    NSLog(@"Button: %@", button);
+    
+    CGFloat heightDifference = buttonImage.size.height - self.tabBarController.tabBar.frame.size.height;
+    if (heightDifference < 0)
+        button.center = self.tabBarController.tabBar.center;
+    else
+    {
+        CGPoint center = self.tabBarController.tabBar.center;
+        center.y = center.y - heightDifference/2.0;
+        button.center = center;
+    }
+    
+    NSLog(@"self.tabBarController.view: %@", self.tabBarController.view);
+    
+    [self.tabBarController.view addSubview:button];
+}
+
 
 @end
