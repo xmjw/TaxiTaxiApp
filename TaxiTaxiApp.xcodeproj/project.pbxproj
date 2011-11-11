@@ -19,6 +19,7 @@
 		14D99018146C263A00DAE48F /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D9900E146C263900DAE48F /* user@2x.png */; };
 		14D9901C146C266300DAE48F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D9901A146C266300DAE48F /* Icon.png */; };
 		14D9901D146C266300DAE48F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D9901B146C266300DAE48F /* Icon@2x.png */; };
+		14D99030146C36C800DAE48F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D9902F146C36C800DAE48F /* CoreLocation.framework */; };
 		7A2E31BF14632939005DA431 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31BE14632939005DA431 /* UIKit.framework */; };
 		7A2E31C114632939005DA431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31C014632939005DA431 /* Foundation.framework */; };
 		7A2E31C314632939005DA431 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31C214632939005DA431 /* CoreGraphics.framework */; };
@@ -65,6 +66,7 @@
 		14D9900E146C263900DAE48F /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		14D9901A146C266300DAE48F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		14D9901B146C266300DAE48F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		14D9902F146C36C800DAE48F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7A2E31BA14632939005DA431 /* TaxiTaxiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiTaxiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E31BE14632939005DA431 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A2E31C014632939005DA431 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,7 +92,7 @@
 		7A2E31F114632939005DA431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7A2E31F314632939005DA431 /* TaxiTaxiAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaxiTaxiAppTests.h; sourceTree = "<group>"; };
 		7A2E31F41463293A005DA431 /* TaxiTaxiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaxiTaxiAppTests.m; sourceTree = "<group>"; };
-		7AE59D631463555A00CDECA9 /* TTJourneysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TTJourneysViewController.h; sourceTree = "<group>"; };
+		7AE59D631463555A00CDECA9 /* TTJourneysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneysViewController.h; sourceTree = "<group>"; };
 		7AE59D641463555A00CDECA9 /* TTJourneysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneysViewController.m; sourceTree = "<group>"; };
 		7AE59D681463565800CDECA9 /* TTReceiptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTReceiptsViewController.h; sourceTree = "<group>"; };
 		7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTReceiptsViewController.m; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14D99030146C36C800DAE48F /* CoreLocation.framework in Frameworks */,
 				7A2E31BF14632939005DA431 /* UIKit.framework in Frameworks */,
 				7A2E31C114632939005DA431 /* Foundation.framework in Frameworks */,
 				7A2E31C314632939005DA431 /* CoreGraphics.framework in Frameworks */,
@@ -125,6 +128,7 @@
 		7A2E31AF14632938005DA431 = {
 			isa = PBXGroup;
 			children = (
+				14D9902F146C36C800DAE48F /* CoreLocation.framework */,
 				7A2E31C414632939005DA431 /* TaxiTaxiApp */,
 				7A2E31ED14632939005DA431 /* TaxiTaxiAppTests */,
 				7A2E31BD14632939005DA431 /* Frameworks */,

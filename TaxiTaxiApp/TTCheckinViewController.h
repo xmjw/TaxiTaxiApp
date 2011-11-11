@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface TTCheckinViewController : UIViewController
+@interface TTCheckinViewController : UIViewController <CLLocationManagerDelegate>
+{
+    CLLocationManager *locationManager;
+    CLLocation *currentLocation;
+    
+    IBOutlet UILabel *latitudeLabel;
+    IBOutlet UILabel *longitudeLabel;
+}
+
+@property (nonatomic, retain) CLLocation *currentLocation;
 
 @end
