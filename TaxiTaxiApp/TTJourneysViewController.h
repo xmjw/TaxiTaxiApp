@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TTJourneysViewControll : UIViewController
+@interface TTJourneysViewController : UIViewController
 
 @end

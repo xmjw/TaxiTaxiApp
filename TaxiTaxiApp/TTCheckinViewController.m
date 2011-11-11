@@ -7,8 +7,12 @@
 //
 
 #import "TTCheckinViewController.h"
+#import "Checkin.h"
 
 @implementation TTCheckinViewController
+
+@synthesize managedObjectContext;
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -55,6 +59,11 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (void) dealloc
+{
+
 }
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 Wawra Corp. All rights reserved.
 //
 
-#import "TTJourneysViewControll.h"
+#import "TTJourneysViewController.h"
 
-@implementation TTJourneysViewControll
+@implementation TTJourneysViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

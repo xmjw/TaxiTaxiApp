@@ -7,13 +7,59 @@
 //
 
 #import "TTAppDelegate.h"
+#import <objc/runtime.h>
 
 @implementation TTAppDelegate
 
 @synthesize window = _window;
 
+@synthesize managedObjectContext;
+@synthesize managedObjectModel;
+@synthesize persistentStoreCoordinator;
+
+- (NSURL *)applicationDocumentsDirectory
+{
+    //core data
+    return nil;    
+}
+
+- (void)saveContext
+{
+    //core data
+    
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+
+    //[mjw] this need to go somewhere else, not sure to access the controllers with so much generated code.
+    //Handle the core data model, and pass it to each tab. somehow.
+    NSManagedObjectContext *context = [self managedObjectContext];
+    if (!context) 
+    {
+        NSLog(@"Fatally failed to get the managed object context for the application. Cannot continue.");
+        //todo: Panic and crash cleanly?
+    }
+    else
+    {
+        //Get hold of the tab bar controller
+        UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+        //Get the array of the individual views.
+        NSArray *viewControllers = (NSArray *)[tabBarController viewControllers];
+
+        //Loop through the view controllers, and make sure they've all got a reference to the NSManagedObjectContext.
+        for (UIViewController *viewController in viewControllers)
+        {
+            // Pass the managed object context to the view controller.
+            //viewController.managedObjectContext = context;
+            
+            NSLog(@"viewControllers %@ has %d children",viewController,[[viewController childViewControllers] count]);
+        }
+    }
+    // Configure myViewController.
+    
+    
     // Override point for customization after application launch.
     return YES;
 }

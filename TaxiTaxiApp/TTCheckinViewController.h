@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface TTCheckinViewController : UIViewController
+{
+
+    NSManagedObjectContext *managedObjectContext;
+}
+
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end
