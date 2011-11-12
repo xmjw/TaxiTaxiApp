@@ -89,9 +89,10 @@
     NSError *error = nil;
     if (![managedObjectContext save:&error]) 
     {
+        NSLog(@"Failed to create basic checkin object");
         return NO;
     }
-    
+    NSLog(@"Created new checkin and commited to managedObjectContext");
     return YES;
 }
 
