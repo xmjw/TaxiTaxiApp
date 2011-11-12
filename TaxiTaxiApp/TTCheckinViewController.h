@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+<<<<<<< HEAD
 #import <CoreLocation/CoreLocation.h>
 
 @interface TTCheckinViewController : UIViewController <CLLocationManagerDelegate>
@@ -21,5 +22,12 @@
 @property (nonatomic, retain) CLLocation *currentLocation;
 
 -(void) addCenterButtonWithImage:(UIImage*)buttonImage highlightImage:(UIImage*)highlightImage;
+=======
+#import "TTViewController.h"
+
+@interface TTCheckinViewController : TTViewController
+{
+}
+>>>>>>> checkin-data-model
 
 @end

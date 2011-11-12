@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTViewController.h"
 
-@interface TTFriendsViewController : UIViewController
+@interface TTFriendsViewController : TTViewController
 
 @end
