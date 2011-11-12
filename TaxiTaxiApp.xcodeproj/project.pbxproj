@@ -25,11 +25,11 @@
 		7A2E31E914632939005DA431 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31BE14632939005DA431 /* UIKit.framework */; };
 		7A2E31EA14632939005DA431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31C014632939005DA431 /* Foundation.framework */; };
 		7A2E31F214632939005DA431 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A2E31F014632939005DA431 /* InfoPlist.strings */; };
-		7A2E31F51463293A005DA431 /* TaxiTaxiAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E31F41463293A005DA431 /* TaxiTaxiAppTests.m */; };
 		7AB0BC2D146DC0EC008F810E /* TTJourneysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC2C146DC0EC008F810E /* TTJourneysViewController.m */; };
 		7AB0BC2F146DC244008F810E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB0BC2E146DC244008F810E /* CoreData.framework */; };
 		7AB0BC32146DCDF6008F810E /* Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC31146DCDF6008F810E /* Checkin.m */; };
 		7AB0BC35146E9B21008F810E /* TTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC34146E9B21008F810E /* TTViewController.m */; };
+		7AB0BC38146EA304008F810E /* TTViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC37146EA304008F810E /* TTViewControllerTests.m */; };
 		7AE59D6A1463565800CDECA9 /* TTReceiptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */; };
 		7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */; };
 /* End PBXBuildFile section */
@@ -69,8 +69,6 @@
 		7A2E31E714632939005DA431 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		7A2E31EF14632939005DA431 /* TaxiTaxiAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TaxiTaxiAppTests-Info.plist"; sourceTree = "<group>"; };
 		7A2E31F114632939005DA431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7A2E31F314632939005DA431 /* TaxiTaxiAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaxiTaxiAppTests.h; sourceTree = "<group>"; };
-		7A2E31F41463293A005DA431 /* TaxiTaxiAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaxiTaxiAppTests.m; sourceTree = "<group>"; };
 		7AB0BC2B146DC0EC008F810E /* TTJourneysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneysViewController.h; sourceTree = "<group>"; };
 		7AB0BC2C146DC0EC008F810E /* TTJourneysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneysViewController.m; sourceTree = "<group>"; };
 		7AB0BC2E146DC244008F810E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -78,6 +76,8 @@
 		7AB0BC31146DCDF6008F810E /* Checkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checkin.m; sourceTree = "<group>"; };
 		7AB0BC33146E9B21008F810E /* TTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTViewController.h; sourceTree = "<group>"; };
 		7AB0BC34146E9B21008F810E /* TTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewController.m; sourceTree = "<group>"; };
+		7AB0BC36146EA304008F810E /* TTViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTViewControllerTests.h; sourceTree = "<group>"; };
+		7AB0BC37146EA304008F810E /* TTViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewControllerTests.m; sourceTree = "<group>"; };
 		7AE59D681463565800CDECA9 /* TTReceiptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTReceiptsViewController.h; sourceTree = "<group>"; };
 		7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTReceiptsViewController.m; sourceTree = "<group>"; };
 		7AE59D6B1463566D00CDECA9 /* TTMedalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMedalsViewController.h; sourceTree = "<group>"; };
@@ -169,8 +169,8 @@
 		7A2E31ED14632939005DA431 /* TaxiTaxiAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				7A2E31F314632939005DA431 /* TaxiTaxiAppTests.h */,
-				7A2E31F41463293A005DA431 /* TaxiTaxiAppTests.m */,
+				7AB0BC36146EA304008F810E /* TTViewControllerTests.h */,
+				7AB0BC37146EA304008F810E /* TTViewControllerTests.m */,
 				7A2E31EE14632939005DA431 /* Supporting Files */,
 			);
 			path = TaxiTaxiAppTests;
@@ -369,6 +369,7 @@
 				7AB0BC2D146DC0EC008F810E /* TTJourneysViewController.m in Sources */,
 				7AB0BC32146DCDF6008F810E /* Checkin.m in Sources */,
 				7AB0BC35146E9B21008F810E /* TTViewController.m in Sources */,
+				7AB0BC38146EA304008F810E /* TTViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +377,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A2E31F51463293A005DA431 /* TaxiTaxiAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
