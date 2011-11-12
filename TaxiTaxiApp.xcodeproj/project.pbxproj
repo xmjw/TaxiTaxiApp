@@ -30,6 +30,7 @@
 		7AB0BC32146DCDF6008F810E /* Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC31146DCDF6008F810E /* Checkin.m */; };
 		7AB0BC35146E9B21008F810E /* TTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC34146E9B21008F810E /* TTViewController.m */; };
 		7AB0BC38146EA304008F810E /* TTViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC37146EA304008F810E /* TTViewControllerTests.m */; };
+		7AB0BC5D146EB2BF008F810E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31E714632939005DA431 /* SenTestingKit.framework */; };
 		7AE59D6A1463565800CDECA9 /* TTReceiptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */; };
 		7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB0BC5D146EB2BF008F810E /* SenTestingKit.framework in Frameworks */,
 				7AB0BC2F146DC244008F810E /* CoreData.framework in Frameworks */,
 				7A2E31BF14632939005DA431 /* UIKit.framework in Frameworks */,
 				7A2E31C114632939005DA431 /* Foundation.framework in Frameworks */,
@@ -112,7 +114,6 @@
 		7A2E31AF14632938005DA431 = {
 			isa = PBXGroup;
 			children = (
-				7AB0BC2E146DC244008F810E /* CoreData.framework */,
 				7A2E31C414632939005DA431 /* TaxiTaxiApp */,
 				7A2E31ED14632939005DA431 /* TaxiTaxiAppTests */,
 				7A2E31BD14632939005DA431 /* Frameworks */,
@@ -132,6 +133,7 @@
 		7A2E31BD14632939005DA431 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AB0BC2E146DC244008F810E /* CoreData.framework */,
 				7A2E31BE14632939005DA431 /* UIKit.framework */,
 				7A2E31C014632939005DA431 /* Foundation.framework */,
 				7A2E31C214632939005DA431 /* CoreGraphics.framework */,
@@ -466,6 +468,10 @@
 		7A2E31F91463293A005DA431 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaxiTaxiApp/TaxiTaxiApp-Prefix.pch";
 				INFOPLIST_FILE = "TaxiTaxiApp/TaxiTaxiApp-Info.plist";
@@ -477,6 +483,10 @@
 		7A2E31FA1463293A005DA431 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaxiTaxiApp/TaxiTaxiApp-Prefix.pch";
 				INFOPLIST_FILE = "TaxiTaxiApp/TaxiTaxiApp-Info.plist";
