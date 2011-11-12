@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface TaxiTaxiAppTests : SenTestCase
+@interface TTViewControllerTests : SenTestCase
 
 @end
