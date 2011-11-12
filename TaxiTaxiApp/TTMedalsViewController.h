@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTViewController.h"
 
-@interface TTMedalsViewController : UIViewController
+@interface TTMedalsViewController : TTViewController
 
 @end

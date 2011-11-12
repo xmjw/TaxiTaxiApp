@@ -11,7 +11,7 @@
 
 @implementation TTCheckinViewController
 
-@synthesize managedObjectContext;
+//@synthesize managedObjectContext;
 
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +63,38 @@
 
 - (void) dealloc
 {
-
+    
 }
+
+- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when 
+{
+// Fields from Checkin entity object
+//    @dynamic expense;
+//    @dynamic gpsAccuracy;
+//    @dynamic latitude;
+//    @dynamic longitute;
+//    @dynamic plate;
+//    @dynamic price;
+//    @dynamic remoteId;
+//    @dynamic synced;
+//    @dynamic wasEnd;
+//    @dynamic wasStart;
+//    @dynamic when;
+    
+    Checkin *checkin = (Checkin *)[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
+    
+    [checkin setPlate:plateNumber];
+    [checkin setWhen:when];
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) 
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
+
 
 @end

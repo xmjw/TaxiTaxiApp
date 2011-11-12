@@ -7,7 +7,9 @@
 //
 
 #import "TTAppDelegate.h"
+#import <CoreData/CoreData.h>
 #import <objc/runtime.h>
+#import "TTViewController.h"
 
 @implementation TTAppDelegate
 
@@ -17,10 +19,13 @@
 @synthesize managedObjectModel;
 @synthesize persistentStoreCoordinator;
 
-- (NSURL *)applicationDocumentsDirectory
+
+
+- (NSString *)applicationDocumentsDirectory
 {
-    //core data
-    return nil;    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    return basePath;
 }
 
 - (void)saveContext
@@ -29,10 +34,78 @@
     
 }
 
+
+/**
+ Returns the managed object context for the application.
+ If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
+ */
+- (NSManagedObjectContext *) managedObjectContext {
+    
+    if (managedObjectContext != nil) {
+        return managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil) {
+        managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [managedObjectContext setPersistentStoreCoordinator: coordinator];
+    }
+    return managedObjectContext;
+}
+
+
+/**
+ Returns the managed object model for the application.
+ If the model doesn't already exist, it is created by merging all of the models found in the application bundle.
+ */
+- (NSManagedObjectModel *)managedObjectModel {
+    
+    if (managedObjectModel != nil) {
+        return managedObjectModel;
+    }
+    managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];    
+    return managedObjectModel;
+}
+
+/**
+ Returns the persistent store coordinator for the application.
+ If the coordinator doesn't already exist, it is created and the application's store added to it.
+ */
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    
+    if (persistentStoreCoordinator != nil) {
+        return persistentStoreCoordinator;
+    }
+    
+    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"TaxiTaxiApp.sqlite"]];
+    
+    
+    NSError *error;
+    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
+        // Handle the error.
+    }    
+    
+    return persistentStoreCoordinator;
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    if (managedObjectContext == nil) 
+    {
+        NSLog(@"Trying to create a managedObjectContext");
+        NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+        if (coordinator != nil) 
+        {
+            
+            managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType: NSMainQueueConcurrencyType];
+            NSLog(@"Created managedobjectContext %@",managedObjectContext);
+            //[managedObjectContext setPersistentStoreCoordinator: coordinator];
+        }
+        else NSLog(@"No NSPersistentStoreCoordinator, cannot create a managedObjectContext");
+    }    
     
-
     //[mjw] this need to go somewhere else, not sure to access the controllers with so much generated code.
     //Handle the core data model, and pass it to each tab. somehow.
     NSManagedObjectContext *context = [self managedObjectContext];
@@ -49,12 +122,11 @@
         NSArray *viewControllers = (NSArray *)[tabBarController viewControllers];
 
         //Loop through the view controllers, and make sure they've all got a reference to the NSManagedObjectContext.
-        for (UIViewController *viewController in viewControllers)
+        for (TTViewController *viewController in viewControllers)
         {
             // Pass the managed object context to the view controller.
-            //viewController.managedObjectContext = context;
-            
-            NSLog(@"viewControllers %@ has %d children",viewController,[[viewController childViewControllers] count]);
+            viewController.managedObjectContext = context;
+            NSLog(@"Assigning managed object context to TTViewController");
         }
     }
     // Configure myViewController.

@@ -7,13 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTViewController.h"
 
-@interface TTCheckinViewController : UIViewController
+@interface TTCheckinViewController : TTViewController
 {
-
-    NSManagedObjectContext *managedObjectContext;
 }
-
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end
