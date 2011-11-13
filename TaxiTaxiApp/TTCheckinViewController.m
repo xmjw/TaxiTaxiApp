@@ -12,7 +12,6 @@
 @implementation TTCheckinViewController
 
 @synthesize currentLocation;
-//@synthesize managedObjectContext;
 @synthesize checkinButton;
 
 - (void)didReceiveMemoryWarning
