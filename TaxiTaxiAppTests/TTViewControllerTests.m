@@ -6,9 +6,10 @@
 //  Copyright (c) 2011 Wawra Corp. All rights reserved.
 //
 
-#import "TaxiTaxiAppTests.h"
+#import "TTViewControllerTests.h"
+#import "TTCheckinViewController.h"
 
-@implementation TaxiTaxiAppTests
+@implementation TTViewControllerTests
 
 - (void)setUp
 {
@@ -24,8 +25,12 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testCheckinSaveEvent
 {
+    TTCheckinViewController *checkinViewController = [[TTCheckinViewController alloc] init];
+    
+    
+    
     STFail(@"Unit tests are not implemented yet in TaxiTaxiAppTests");
 }
 

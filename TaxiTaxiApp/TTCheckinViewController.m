@@ -7,10 +7,13 @@
 //
 
 #import "TTCheckinViewController.h"
+#import "Checkin.h"
 
 @implementation TTCheckinViewController
 
 @synthesize currentLocation;
+//@synthesize managedObjectContext;
+@synthesize checkinButton;
 
 - (void)didReceiveMemoryWarning
 {
@@ -79,6 +82,7 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+
 #pragma mark Location
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -108,6 +112,47 @@
     
     [locationManager stopUpdatingLocation];
     locationManager = nil;
+}
+
+
+- (void) dealloc
+{
+    
+}
+
+- (IBAction) checkin:(id)sender
+{
+    NSLog(@"Checkin was called...");
+}
+
+- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when 
+{
+// Fields from Checkin entity object
+//    @dynamic expense;
+//    @dynamic gpsAccuracy;
+//    @dynamic latitude;
+//    @dynamic longitute;
+//    @dynamic plate;
+//    @dynamic price;
+//    @dynamic remoteId;
+//    @dynamic synced;
+//    @dynamic wasEnd;
+//    @dynamic wasStart;
+//    @dynamic when;
+    
+    Checkin *checkin = (Checkin *)[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
+    
+    [checkin setPlate:plateNumber];
+    [checkin setWhen:when];
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) 
+    {
+        NSLog(@"Failed to create basic checkin object");
+        return NO;
+    }
+    NSLog(@"Created new checkin and commited to managedObjectContext");
+    return YES;
 }
 
 @end

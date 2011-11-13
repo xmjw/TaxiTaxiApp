@@ -8,16 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "TTViewController.h"
 
-@interface TTCheckinViewController : UIViewController <CLLocationManagerDelegate>
+@interface TTCheckinViewController : TTViewController <CLLocationManagerDelegate>
 {
     CLLocationManager *locationManager;
     CLLocation *currentLocation;
     
     IBOutlet UILabel *latitudeLabel;
     IBOutlet UILabel *longitudeLabel;
+
+
+    UIButton *checkinButton;
 }
 
 @property (nonatomic, retain) CLLocation *currentLocation;
+@property (nonatomic, retain) IBOutlet UIButton *checkinButton;
+
+- (IBAction) checkin:(id)sender;
 
 @end
