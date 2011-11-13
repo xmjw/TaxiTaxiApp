@@ -12,7 +12,7 @@
 @implementation TTCheckinViewController
 
 //@synthesize managedObjectContext;
-
+@synthesize checkinButton;
 
 - (void)didReceiveMemoryWarning
 {
@@ -64,6 +64,11 @@
 - (void) dealloc
 {
     
+}
+
+- (IBAction) checkin:(id)sender
+{
+    NSLog(@"Checkin was called...");
 }
 
 - (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when 

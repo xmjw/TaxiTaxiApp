@@ -11,6 +11,11 @@
 
 @interface TTCheckinViewController : TTViewController
 {
+    UIButton *checkinButton;
 }
+
+@property (nonatomic, retain) IBOutlet UIButton *checkinButton;
+
+- (IBAction) checkin:(id)sender;
 
 @end
