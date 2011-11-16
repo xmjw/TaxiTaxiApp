@@ -1,14 +1,14 @@
 //
-//  TTJourneysViewControll.m
+//  TTJourneysViewController.m
 //  TaxiTaxiApp
 //
-//  Created by Michael Wawra on 03/11/2011.
+//  Created by Michael Wawra on 16/11/2011.
 //  Copyright (c) 2011 Wawra Corp. All rights reserved.
 //
 
 #import "TTJourneysViewController.h"
 
-@implementation TTJourneysViewController
+@implementation TTJourneysViewController 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,22 +29,20 @@
 
 #pragma mark - View lifecycle
 
-
 /*
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-
 }
 */
 
-
+/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
-
+*/
 
 - (void)viewDidUnload
 {
