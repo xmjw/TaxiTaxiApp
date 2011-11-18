@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TTViewController.h"
 
-@interface TTMedalsViewController : TTViewController
+@interface TTMedalsViewController : UIViewController <TTViewController>
 
 @end

@@ -9,6 +9,7 @@
 #import "TTMedalsViewController.h"
 
 @implementation TTMedalsViewController
+@synthesize managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

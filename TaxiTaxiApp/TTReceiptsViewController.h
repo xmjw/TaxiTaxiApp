@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TTViewController.h"
 
-@interface TTReceiptsViewController : TTViewController
+@interface TTReceiptsViewController : UIViewController <TTViewController>
 
 @end

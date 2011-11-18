@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TTViewController.h"
 
-@interface TTFriendsViewController : TTViewController
+@interface TTFriendsViewController : UIViewController <TTViewController>
 
 @end

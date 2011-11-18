@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "TTViewController.h"
 
-@interface TTCheckinViewController : TTViewController <CLLocationManagerDelegate>
+@interface TTCheckinViewController  : UIViewController <TTViewController, CLLocationManagerDelegate>
 {
     CLLocationManager *locationManager;
     CLLocation *currentLocation;

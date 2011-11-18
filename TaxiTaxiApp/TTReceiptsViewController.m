@@ -9,6 +9,7 @@
 #import "TTReceiptsViewController.h"
 
 @implementation TTReceiptsViewController
+@synthesize managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

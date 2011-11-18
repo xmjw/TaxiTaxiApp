@@ -13,6 +13,7 @@
 
 @synthesize currentLocation;
 @synthesize checkinButton;
+@synthesize managedObjectContext;
 
 - (void)didReceiveMemoryWarning
 {
@@ -124,7 +125,7 @@
     NSLog(@"Checkin was called...");
 }
 
-- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when 
+- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSNumber *)longitude withLatitude:(NSNumber *)latitude
 {
 // Fields from Checkin entity object
 //    @dynamic expense;
@@ -143,6 +144,9 @@
     
     [checkin setPlate:plateNumber];
     [checkin setWhen:when];
+    [checkin setLongitute: longitude];
+    [checkin setLatitude: latitude];
+    
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) 

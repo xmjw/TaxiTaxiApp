@@ -9,6 +9,7 @@
 #import "TTJourneysViewController.h"
 
 @implementation TTJourneysViewController 
+@synthesize managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

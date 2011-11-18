@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TTViewController.h"
 
-@interface TTJourneysViewController : TTViewController
+@interface TTJourneysViewController : UINavigationController <TTViewController>
 
 @end

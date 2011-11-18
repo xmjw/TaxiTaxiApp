@@ -41,7 +41,6 @@
 		7A52B985147479FF002937CF /* TTJourneysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A52B984147479FF002937CF /* TTJourneysViewController.m */; };
 		7AB0BC2F146DC244008F810E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB0BC2E146DC244008F810E /* CoreData.framework */; };
 		7AB0BC32146DCDF6008F810E /* Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC31146DCDF6008F810E /* Checkin.m */; };
-		7AB0BC35146E9B21008F810E /* TTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC34146E9B21008F810E /* TTViewController.m */; };
 		7AE59D651463555A00CDECA9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		7AE59D6A1463565800CDECA9 /* TTReceiptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */; };
 		7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */; };
@@ -101,7 +100,6 @@
 		7AB0BC30146DCDF6008F810E /* Checkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checkin.h; sourceTree = "<group>"; };
 		7AB0BC31146DCDF6008F810E /* Checkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checkin.m; sourceTree = "<group>"; };
 		7AB0BC33146E9B21008F810E /* TTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTViewController.h; sourceTree = "<group>"; };
-		7AB0BC34146E9B21008F810E /* TTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTViewController.m; sourceTree = "<group>"; };
 		7AE59D681463565800CDECA9 /* TTReceiptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTReceiptsViewController.h; sourceTree = "<group>"; };
 		7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTReceiptsViewController.m; sourceTree = "<group>"; };
 		7AE59D6B1463566D00CDECA9 /* TTMedalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMedalsViewController.h; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				7AB0BC33146E9B21008F810E /* TTViewController.h */,
-				7AB0BC34146E9B21008F810E /* TTViewController.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -416,7 +413,6 @@
 				7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */,
 				7A13E16114635E9E00BEF171 /* DataModel.xcdatamodeld in Sources */,
 				7AB0BC32146DCDF6008F810E /* Checkin.m in Sources */,
-				7AB0BC35146E9B21008F810E /* TTViewController.m in Sources */,
 				7A52B985147479FF002937CF /* TTJourneysViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

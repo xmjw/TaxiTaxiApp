@@ -122,7 +122,7 @@
         NSArray *viewControllers = (NSArray *)[tabBarController viewControllers];
 
         //Loop through the view controllers, and make sure they've all got a reference to the NSManagedObjectContext.
-        for (TTViewController *viewController in viewControllers)
+        for (id<TTViewController> viewController in viewControllers)
         {
             NSLog(@"Assigning Managed object context to %@",viewController);
             // Pass the managed object context to the view controller.
