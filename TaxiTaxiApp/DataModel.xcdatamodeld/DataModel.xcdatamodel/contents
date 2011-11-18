@@ -3,8 +3,8 @@
     <entity name="Checkin" representedClassName="Checkin" syncable="YES">
         <attribute name="expense" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="gpsAccuracy" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitute" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitute" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="remoteId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
