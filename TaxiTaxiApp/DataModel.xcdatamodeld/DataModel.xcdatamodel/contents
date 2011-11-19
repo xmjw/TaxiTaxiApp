@@ -14,6 +14,6 @@
         <attribute name="when" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Checkin" positionX="160" positionY="192" width="128" height="210"/>
+        <element name="Checkin" positionX="160" positionY="192" width="218" height="210"/>
     </elements>
 </model>

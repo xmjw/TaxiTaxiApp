@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 #import <objc/runtime.h>
 #import "TTViewController.h"
+#import "Checkin.h"
 
 @implementation TTAppDelegate
 
@@ -58,12 +59,19 @@
  Returns the managed object model for the application.
  If the model doesn't already exist, it is created by merging all of the models found in the application bundle.
  */
-- (NSManagedObjectModel *)managedObjectModel {
-    
-    if (managedObjectModel != nil) {
+- (NSManagedObjectModel *)managedObjectModel 
+{    
+    if (managedObjectModel != nil) 
+    {
         return managedObjectModel;
     }
-    managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];    
+    managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];  
+    
+    for(NSString* entity in [managedObjectModel entities])
+    {
+        NSLog(@"Looking at entity %@",entity);
+    }
+    
     return managedObjectModel;
 }
 
@@ -77,14 +85,15 @@
         return persistentStoreCoordinator;
     }
     
-    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"TaxiTaxiApp.sqlite"]];
-    
+    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"DataModel.sqlite"]];
     
     NSError *error;
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) {
-        // Handle the error.
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:nil error:&error]) 
+    {
+        NSLog(@"ERROR!!! Couldn't create PersistentStoreCoordinator for some reason.");
     }    
+    else NSLog(@"Created PersistentStoreCoordinator A-OK...");
     
     return persistentStoreCoordinator;
 }
@@ -92,23 +101,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    if (managedObjectContext == nil) 
-    {
-        NSLog(@"Trying to create a managedObjectContext");
-        NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-        if (coordinator != nil) 
-        {
-            
-            managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType: NSMainQueueConcurrencyType];
-            NSLog(@"Created managedobjectContext %@",managedObjectContext);
-            //[managedObjectContext setPersistentStoreCoordinator: coordinator];
-        }
-        else NSLog(@"No NSPersistentStoreCoordinator, cannot create a managedObjectContext");
-    }    
-    
     //[mjw] this need to go somewhere else, not sure to access the controllers with so much generated code.
     //Handle the core data model, and pass it to each tab. somehow.
     NSManagedObjectContext *context = [self managedObjectContext];
+    
     if (!context) 
     {
         NSLog(@"Fatally failed to get the managed object context for the application. Cannot continue.");
@@ -124,14 +120,12 @@
         //Loop through the view controllers, and make sure they've all got a reference to the NSManagedObjectContext.
         for (id<TTViewController> viewController in viewControllers)
         {
-            NSLog(@"Assigning Managed object context to %@",viewController);
+            NSLog(@"Assigning Managed object context %@ to id<TTViewController> %@",context,viewController);
             // Pass the managed object context to the view controller.
             viewController.managedObjectContext = context;
             NSLog(@"Assigning managed object context to TTViewController");
         }
     }
-    // Configure myViewController.
-    
     
     // Override point for customization after application launch.
     return YES;

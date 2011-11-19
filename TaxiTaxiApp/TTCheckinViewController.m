@@ -122,11 +122,16 @@
 
 - (IBAction) checkin:(id)sender
 {
-    NSLog(@"Checkin was called...");
+    if ([self createCheckinWithPlate:@"TESTPLATE" onDate:[NSDate date] withLongitude:[longitudeLabel text] withLatitude:[latitudeLabel text]])
+    {
+        NSLog(@"Wrote a checkin to the database");
+    }
+    else NSLog(@"Failed to write the checkin");
 }
 
-- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSNumber *)longitude withLatitude:(NSNumber *)latitude
+- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude
 {
+    
 // Fields from Checkin entity object
 //    @dynamic expense;
 //    @dynamic gpsAccuracy;
@@ -139,7 +144,7 @@
 //    @dynamic wasEnd;
 //    @dynamic wasStart;
 //    @dynamic when;
-    
+        
     Checkin *checkin = (Checkin *)[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
     
     [checkin setPlate:plateNumber];

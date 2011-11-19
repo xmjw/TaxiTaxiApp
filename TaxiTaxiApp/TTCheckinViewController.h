@@ -26,5 +26,6 @@
 @property (nonatomic, retain) IBOutlet UIButton *checkinButton;
 
 - (IBAction) checkin:(id)sender;
+- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude;
 
 @end
