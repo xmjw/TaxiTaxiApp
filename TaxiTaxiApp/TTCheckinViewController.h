@@ -8,22 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "TTViewController.h"
+#import "TTManagedObjectContextProtocol.h"
 
-@interface TTCheckinViewController  : UIViewController <TTViewController, CLLocationManagerDelegate>
+@interface TTCheckinViewController  : UIViewController <TTManagedObjectContextProtocol, CLLocationManagerDelegate>
 {
     CLLocationManager *locationManager;
     CLLocation *currentLocation;
     
     IBOutlet UILabel *latitudeLabel;
     IBOutlet UILabel *longitudeLabel;
-
+    IBOutlet UITextView *plateNumberTextView;
 
     UIButton *checkinButton;
 }
 
 @property (nonatomic, retain) CLLocation *currentLocation;
 @property (nonatomic, retain) IBOutlet UIButton *checkinButton;
+@property (nonatomic, retain) IBOutlet UITextView *plateNumberTextView;
 
 - (IBAction) checkin:(id)sender;
 - (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude;

@@ -9,7 +9,7 @@
 #import "TTAppDelegate.h"
 #import <CoreData/CoreData.h>
 #import <objc/runtime.h>
-#import "TTViewController.h"
+#import "TTManagedObjectContextProtocol.h"
 #import "Checkin.h"
 
 @implementation TTAppDelegate
@@ -67,11 +67,6 @@
     }
     managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];  
     
-    for(NSString* entity in [managedObjectModel entities])
-    {
-        NSLog(@"Looking at entity %@",entity);
-    }
-    
     return managedObjectModel;
 }
 
@@ -93,7 +88,6 @@
     {
         NSLog(@"ERROR!!! Couldn't create PersistentStoreCoordinator for some reason.");
     }    
-    else NSLog(@"Created PersistentStoreCoordinator A-OK...");
     
     return persistentStoreCoordinator;
 }
@@ -118,12 +112,10 @@
         NSArray *viewControllers = (NSArray *)[tabBarController viewControllers];
 
         //Loop through the view controllers, and make sure they've all got a reference to the NSManagedObjectContext.
-        for (id<TTViewController> viewController in viewControllers)
+        for (id<TTManagedObjectContextProtocol> viewController in viewControllers)
         {
-            NSLog(@"Assigning Managed object context %@ to id<TTViewController> %@",context,viewController);
             // Pass the managed object context to the view controller.
             viewController.managedObjectContext = context;
-            NSLog(@"Assigning managed object context to TTViewController");
         }
     }
     

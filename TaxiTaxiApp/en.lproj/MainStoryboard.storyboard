@@ -9,13 +9,71 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sh3-05-cIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="per-iQ-RjI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JtP-dV-eUD">
+                    <view key="view" contentMode="scaleToFill" id="JtP-dV-eUD" customClass="TTJourneySummaryView">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" image="same-same.png" id="shX-VC-GQe">
+                                <rect key="frame" x="20" y="183" width="141" height="141"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Monthly" lineBreakMode="tailTruncation" minimumFontSize="10" id="eNr-wR-9Xn">
+                                <rect key="frame" x="20" y="332" width="62" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weekly" lineBreakMode="tailTruncation" minimumFontSize="10" id="UWH-38-Zk0">
+                                <rect key="frame" x="105" y="332" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="£132" lineBreakMode="tailTruncation" minimumFontSize="32" id="GvR-LH-xyD">
+                                <rect key="frame" x="169" y="197" width="131" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="£24" lineBreakMode="tailTruncation" minimumFontSize="32" id="lWp-Ur-X9S">
+                                <rect key="frame" x="169" y="261" width="131" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weekly" lineBreakMode="tailTruncation" minimumFontSize="10" id="T8s-AL-txK">
+                                <rect key="frame" x="169" y="287" width="48" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Monthly" lineBreakMode="tailTruncation" minimumFontSize="6" id="pXc-9V-b1C">
+                                <rect key="frame" x="169" y="228" width="48" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="movementImage" destination="shX-VC-GQe" id="TeI-Dn-hX5"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Latest Journey" id="iod-mS-iue">
-                        <barButtonItem key="rightBarButtonItem" title="View All" id="QJ0-hO-fWs"/>
+                    <navigationItem key="navigationItem" title="Summary" id="iod-mS-iue">
+                        <barButtonItem key="rightBarButtonItem" title="View All" id="QJ0-hO-fWs">
+                            <connections>
+                                <segue destination="m1m-of-OV2" kind="push" id="rKe-ZM-1sV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
             </objects>
@@ -66,6 +124,51 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="774" y="-151"/>
+        </scene>
+        <scene sceneID="Ft0-rR-5m1">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NN5-Oc-Njd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="m1m-of-OV2" customClass="TTJourneyHistoryViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dRE-Z8-Zkl">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="3Rd-Ho-9BC" detailTextLabel="1EL-ZG-Cb0" style="IBUITableViewCellStyleSubtitle" id="nI0-LT-gDf">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Rd-Ho-9BC">
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1EL-ZG-Cb0">
+                                            <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="m1m-of-OV2" id="uzp-68-aag"/>
+                            <outlet property="delegate" destination="m1m-of-OV2" id="PAC-B7-iFN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="History" id="Rv3-5I-5Aj"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1674" y="-757"/>
         </scene>
         <scene sceneID="y1W-dl-zad">
             <objects>
@@ -138,7 +241,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Check-In" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="22">
-                                <rect key="frame" x="54" y="98" width="212" height="43"/>
+                                <rect key="frame" x="54" y="184" width="212" height="43"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
@@ -146,14 +249,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" textAlignment="center" id="23">
-                                <rect key="frame" x="20" y="181" width="280" height="219"/>
+                                <rect key="frame" x="20" y="251" width="280" height="219"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <string key="text">Allows you to register a journey against a cab. Has the following options: Price, Location, Start or End, With Someone, Rate Your Drive, Mark as Expensable</string>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pPV-Ye-fyE">
-                                <rect key="frame" x="20" y="337" width="280" height="37"/>
+                                <rect key="frame" x="20" y="122" width="280" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Check-in to this cab">
@@ -195,6 +298,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="6du-xK-8io">
+                                <rect key="frame" x="20" y="78" width="281" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -234,6 +343,7 @@
         <image name="car.png" width="24" height="19"/>
         <image name="credit-card.png" width="24" height="19"/>
         <image name="pushpin-1.png" width="15" height="24"/>
+        <image name="same-same.png" width="280" height="280"/>
         <image name="user.png" width="19" height="24"/>
     </resources>
     <classes>
@@ -244,10 +354,20 @@
                 <relationship kind="outlet" name="checkinButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="plateNumberTextView" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="TTFriendsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TTFriendsViewController.h"/>
+        </class>
+        <class className="TTJourneyHistoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneyHistoryViewController.h"/>
+        </class>
+        <class className="TTJourneySummaryView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneySummaryView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="movementImage" candidateClass="UIImageView"/>
+            </relationships>
         </class>
         <class className="TTJourneysViewController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneysViewController.h"/>

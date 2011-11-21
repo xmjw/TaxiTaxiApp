@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTViewController.h"
+#import "TTManagedObjectContextProtocol.h"
 
-@interface TTReceiptsViewController : UIViewController <TTViewController>
+@interface TTReceiptsViewController : UIViewController <TTManagedObjectContextProtocol>
 
 @end

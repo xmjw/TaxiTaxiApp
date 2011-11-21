@@ -14,6 +14,7 @@
 @synthesize currentLocation;
 @synthesize checkinButton;
 @synthesize managedObjectContext;
+@synthesize plateNumberTextView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -122,7 +123,7 @@
 
 - (IBAction) checkin:(id)sender
 {
-    if ([self createCheckinWithPlate:@"TESTPLATE" onDate:[NSDate date] withLongitude:[longitudeLabel text] withLatitude:[latitudeLabel text]])
+    if ([self createCheckinWithPlate:[plateNumberTextView text] onDate:[NSDate date] withLongitude:[longitudeLabel text] withLatitude:[latitudeLabel text]])
     {
         NSLog(@"Wrote a checkin to the database");
     }

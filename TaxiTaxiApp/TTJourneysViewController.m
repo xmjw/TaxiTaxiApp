@@ -7,6 +7,7 @@
 //
 
 #import "TTJourneysViewController.h"
+#import "TTManagedObjectContextProtocol.h"
 
 @implementation TTJourneysViewController 
 @synthesize managedObjectContext;
@@ -37,13 +38,26 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 }
-*/
+
+- (void) pushViewController:(UIViewController *) view animated:(BOOL) animated
+{
+    NSLog(@"Pushing %@",view);
+    
+    //try and make it do this just once somehow?
+    
+    id<TTManagedObjectContextProtocol> managedObjectView = (id<TTManagedObjectContextProtocol>) view;
+    
+    [managedObjectView setManagedObjectContext:managedObjectContext];
+    
+    [super pushViewController:view animated:animated];
+}
 
 - (void)viewDidUnload
 {
