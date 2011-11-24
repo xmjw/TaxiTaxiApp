@@ -44,6 +44,7 @@
 		7A443E82147DB6FC00068B4E /* Check-In.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A443E80147DB6FC00068B4E /* Check-In.png */; };
 		7A49772D14747510001C4317 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31E714632939005DA431 /* SenTestingKit.framework */; };
 		7A52B985147479FF002937CF /* TTJourneysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A52B984147479FF002937CF /* TTJourneysViewController.m */; };
+		7A92173B147E72C100FD09DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A92173A147E72C100FD09DB /* MapKit.framework */; };
 		7A93B1801478198100B10643 /* TTJourneySummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A93B17F1478198100B10643 /* TTJourneySummaryView.m */; };
 		7AB0BC2F146DC244008F810E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB0BC2E146DC244008F810E /* CoreData.framework */; };
 		7AB0BC32146DCDF6008F810E /* Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC31146DCDF6008F810E /* Checkin.m */; };
@@ -118,6 +119,7 @@
 		7A443E80147DB6FC00068B4E /* Check-In.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check-In.png"; sourceTree = "<group>"; };
 		7A52B983147479FF002937CF /* TTJourneysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneysViewController.h; sourceTree = "<group>"; };
 		7A52B984147479FF002937CF /* TTJourneysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneysViewController.m; sourceTree = "<group>"; };
+		7A92173A147E72C100FD09DB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7A93B17E1478198100B10643 /* TTJourneySummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneySummaryView.h; sourceTree = "<group>"; };
 		7A93B17F1478198100B10643 /* TTJourneySummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneySummaryView.m; sourceTree = "<group>"; };
 		7A93B181147819F900B10643 /* TTManagedObjectContextProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTManagedObjectContextProtocol.h; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A92173B147E72C100FD09DB /* MapKit.framework in Frameworks */,
 				7A2E31E914632939005DA431 /* UIKit.framework in Frameworks */,
 				7A2E31EA14632939005DA431 /* Foundation.framework in Frameworks */,
 			);
@@ -189,6 +192,7 @@
 		7A2E31BD14632939005DA431 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A92173A147E72C100FD09DB /* MapKit.framework */,
 				14D9902F146C36C800DAE48F /* CoreLocation.framework */,
 				7AB0BC2E146DC244008F810E /* CoreData.framework */,
 				7A2E31BE14632939005DA431 /* UIKit.framework */,

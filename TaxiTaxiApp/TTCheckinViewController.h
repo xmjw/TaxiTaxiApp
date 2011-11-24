@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "TTManagedObjectContextProtocol.h"
+#import <MapKit/MapKit.h>
 
-@interface TTCheckinViewController  : UIViewController <TTManagedObjectContextProtocol, CLLocationManagerDelegate>
+@interface TTCheckinViewController  : UIViewController <TTManagedObjectContextProtocol, CLLocationManagerDelegate, MKMapViewDelegate>
 {
     CLLocationManager *locationManager;
     CLLocation *currentLocation;
@@ -18,7 +19,8 @@
     IBOutlet UILabel *latitudeLabel;
     IBOutlet UILabel *longitudeLabel;
     IBOutlet UITextField *plateNumberTextView;
-
+    IBOutlet MKMapView *mapView;
+    
     UIButton *checkinButton;
     
     IBOutlet UIScrollView *scrollView;
@@ -28,6 +30,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *checkinButton;
 @property (nonatomic, retain) IBOutlet UITextField *plateNumberTextView;
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
 - (IBAction) keyboardDisplayed: (id) sender;
 - (IBAction) keyboardHidden: (id) sender;

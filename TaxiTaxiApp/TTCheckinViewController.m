@@ -16,11 +16,19 @@
 @synthesize managedObjectContext;
 @synthesize plateNumberTextView;
 @synthesize scrollView;
+@synthesize mapView;
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - MapKit View
+
+- (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated
+{
+    
 }
 
 #pragma mark - View lifecycle
