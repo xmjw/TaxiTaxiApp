@@ -15,6 +15,7 @@
 @synthesize checkinButton;
 @synthesize managedObjectContext;
 @synthesize plateNumberTextView;
+@synthesize scrollView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -121,6 +122,34 @@
     
 }
 
+
+- (IBAction) keyboardDisplayed: (id) sender
+{
+    
+    float x = 0;
+    float y = 0;
+    
+    
+    CGSize size = [scrollView contentSize];
+    
+    x = size.width;
+    y = size.height;
+    
+    NSLog(@"Keyboard is up. Scroll View is x=%f y=%f",x,y);
+    [scrollView setContentSize:CGSizeMake(320, 400)];
+    
+    [scrollView setFrame:CGRectMake(0, 0, 320, 300)];
+
+    
+    
+}
+
+- (IBAction) keyboardHidden: (id) sender
+{
+    NSLog(@"Keyboard is down again.");
+}
+
+
 - (IBAction) checkin:(id)sender
 {
     if ([self createCheckinWithPlate:[plateNumberTextView text] onDate:[NSDate date] withLongitude:[longitudeLabel text] withLatitude:[latitudeLabel text]])
@@ -128,6 +157,8 @@
         NSLog(@"Wrote a checkin to the database");
     }
     else NSLog(@"Failed to write the checkin");
+    
+    [plateNumberTextView resignFirstResponder];
 }
 
 - (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude

@@ -117,6 +117,40 @@
             // Pass the managed object context to the view controller.
             viewController.managedObjectContext = context;
         }
+        
+        for (UITabBarItem *item in [[tabBarController tabBar] items])
+        {
+            NSLog(@"Item %@, and %@, %@",item,[item badgeValue],[item title]);
+        }
+
+        UIImage* buttonImage = [UIImage imageNamed:@"Check-In.png"];
+        UIImage* highlightImage = [UIImage imageNamed:@"Check-In-Highlighted.png"];
+        
+        UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+        button.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
+        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        [button setBackgroundImage:highlightImage forState:UIControlStateHighlighted];
+        
+        CGFloat heightDifference = (buttonImage.size.height - tabBarController.tabBar.frame.size.height) + 25;
+        if (heightDifference < 0)
+            button.center = tabBarController.tabBar.center;
+        else
+        {
+            CGPoint center = tabBarController.tabBar.center;
+            center.y = center.y - heightDifference/2.0;
+            button.center = center;
+        }
+        
+        [button addTarget:tabBarController action:@selector(specialButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [tabBarController.view addSubview:button];
+        
+        
+        //Use the below and a button callback to allow it to function...
+        tabBarController.selectedIndex = 2;
+        
+        NSLog(@"Added button to middle...");
     }
     
     // Override point for customization after application launch.

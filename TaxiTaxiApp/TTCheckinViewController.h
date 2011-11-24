@@ -17,15 +17,20 @@
     
     IBOutlet UILabel *latitudeLabel;
     IBOutlet UILabel *longitudeLabel;
-    IBOutlet UITextView *plateNumberTextView;
+    IBOutlet UITextField *plateNumberTextView;
 
     UIButton *checkinButton;
+    
+    IBOutlet UIScrollView *scrollView;
 }
 
 @property (nonatomic, retain) CLLocation *currentLocation;
 @property (nonatomic, retain) IBOutlet UIButton *checkinButton;
-@property (nonatomic, retain) IBOutlet UITextView *plateNumberTextView;
+@property (nonatomic, retain) IBOutlet UITextField *plateNumberTextView;
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 
+- (IBAction) keyboardDisplayed: (id) sender;
+- (IBAction) keyboardHidden: (id) sender;
 - (IBAction) checkin:(id)sender;
 - (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude;
 
