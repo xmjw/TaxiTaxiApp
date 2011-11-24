@@ -58,8 +58,7 @@
 		7ABFD07E1477FEFC003101F1 /* up-same.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ABFD0751477FEFC003101F1 /* up-same.png */; };
 		7ABFD07F1477FEFC003101F1 /* up-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ABFD0761477FEFC003101F1 /* up-up.png */; };
 		7AE59D651463555A00CDECA9 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		7AE59D6A1463565800CDECA9 /* TTReceiptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */; };
-		7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */; };
+		7AE59D6A1463565800CDECA9 /* TTCheckOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE59D691463565800CDECA9 /* TTCheckOutViewController.m */; };
 		7AE66341147AFBD300096978 /* TTJourneyHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE66340147AFBD300096978 /* TTJourneyHistoryViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -135,10 +134,8 @@
 		7ABFD0741477FEFC003101F1 /* up-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-down.png"; sourceTree = "<group>"; };
 		7ABFD0751477FEFC003101F1 /* up-same.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-same.png"; sourceTree = "<group>"; };
 		7ABFD0761477FEFC003101F1 /* up-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-up.png"; sourceTree = "<group>"; };
-		7AE59D681463565800CDECA9 /* TTReceiptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTReceiptsViewController.h; sourceTree = "<group>"; };
-		7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTReceiptsViewController.m; sourceTree = "<group>"; };
-		7AE59D6B1463566D00CDECA9 /* TTMedalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTMedalsViewController.h; sourceTree = "<group>"; };
-		7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTMedalsViewController.m; sourceTree = "<group>"; };
+		7AE59D681463565800CDECA9 /* TTCheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TTCheckOutViewController.h; sourceTree = "<group>"; };
+		7AE59D691463565800CDECA9 /* TTCheckOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCheckOutViewController.m; sourceTree = "<group>"; };
 		7AE6633F147AFBD300096978 /* TTJourneyHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneyHistoryViewController.h; sourceTree = "<group>"; };
 		7AE66340147AFBD300096978 /* TTJourneyHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneyHistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,10 +252,8 @@
 				7A2E31D414632939005DA431 /* TTFriendsViewController.m */,
 				7A2E31DA14632939005DA431 /* TTCheckinViewController.h */,
 				7A2E31DB14632939005DA431 /* TTCheckinViewController.m */,
-				7AE59D681463565800CDECA9 /* TTReceiptsViewController.h */,
-				7AE59D691463565800CDECA9 /* TTReceiptsViewController.m */,
-				7AE59D6B1463566D00CDECA9 /* TTMedalsViewController.h */,
-				7AE59D6C1463566D00CDECA9 /* TTMedalsViewController.m */,
+				7AE59D681463565800CDECA9 /* TTCheckOutViewController.h */,
+				7AE59D691463565800CDECA9 /* TTCheckOutViewController.m */,
 				7A52B983147479FF002937CF /* TTJourneysViewController.h */,
 				7A52B984147479FF002937CF /* TTJourneysViewController.m */,
 				7AE6633F147AFBD300096978 /* TTJourneyHistoryViewController.h */,
@@ -480,8 +475,7 @@
 				7A2E31D514632939005DA431 /* TTFriendsViewController.m in Sources */,
 				7A2E31DC14632939005DA431 /* TTCheckinViewController.m in Sources */,
 				7AE59D651463555A00CDECA9 /* (null) in Sources */,
-				7AE59D6A1463565800CDECA9 /* TTReceiptsViewController.m in Sources */,
-				7AE59D6D1463566D00CDECA9 /* TTMedalsViewController.m in Sources */,
+				7AE59D6A1463565800CDECA9 /* TTCheckOutViewController.m in Sources */,
 				7A13E16114635E9E00BEF171 /* DataModel.xcdatamodeld in Sources */,
 				7AB0BC32146DCDF6008F810E /* Checkin.m in Sources */,
 				7A52B985147479FF002937CF /* TTJourneysViewController.m in Sources */,

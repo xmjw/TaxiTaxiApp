@@ -173,12 +173,12 @@
         <scene sceneID="y1W-dl-zad">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5x-84-jfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="DDe-hg-hzY" customClass="TTReceiptsViewController" sceneMemberID="viewController">
+                <viewController id="DDe-hg-hzY" customClass="TTCheckOutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KXr-LZ-qOY">
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Receipts" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="rl4-3b-gfL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Checkout" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="rl4-3b-gfL">
                                 <rect key="frame" x="54" y="120" width="212" height="43"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -196,41 +196,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Receipts" image="credit-card.png" id="S45-cH-ULA"/>
+                    <tabBarItem key="tabBarItem" title="Checkout" image="credit-card.png" id="S45-cH-ULA"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="781" y="1064"/>
-        </scene>
-        <scene sceneID="DVT-Cw-pm7">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pLI-ic-hK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="p7T-Ys-nii" customClass="TTMedalsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NMb-xc-zHA">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Medals" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="nMz-zw-D6r">
-                                <rect key="frame" x="54" y="120" width="212" height="43"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" textAlignment="center" id="PSf-l2-Wk9">
-                                <rect key="frame" x="20" y="171" width="280" height="134"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <string key="text">Like Foursquare Badges, you get little medals for taking the same cab twice, spending more than 2x your previous recond in a month (goes up indefinitely) or taking a cab your friend took (if data is synced)</string>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Medals" image="badge.png" id="nMy-bQ-hVp"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="781" y="1684"/>
         </scene>
         <scene sceneID="13">
             <objects>
@@ -334,10 +303,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="MFr-p1-jjV" kind="relationship" relationship="viewControllers" id="wG1-KD-QyT"/>
-                        <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="DDe-hg-hzY" kind="relationship" relationship="viewControllers" id="1Pb-P9-6tU"/>
-                        <segue destination="p7T-Ys-nii" kind="relationship" relationship="viewControllers" id="ZG6-Qb-oIR"/>
+                        <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -345,53 +313,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="badge.png" width="16" height="24"/>
         <image name="car.png" width="24" height="19"/>
         <image name="credit-card.png" width="24" height="19"/>
         <image name="pushpin-1.png" width="15" height="24"/>
         <image name="same-same.png" width="280" height="280"/>
         <image name="user.png" width="19" height="24"/>
     </resources>
-    <classes>
-        <class className="TTCheckinViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTCheckinViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="checkin:"/>
-                <relationship kind="action" name="keyboardDisplayed:"/>
-                <relationship kind="action" name="keyboardHidden:"/>
-                <relationship kind="outlet" name="checkinButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="plateNumberTextView" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="TTFriendsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTFriendsViewController.h"/>
-        </class>
-        <class className="TTJourneyHistoryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneyHistoryViewController.h"/>
-        </class>
-        <class className="TTJourneySummaryView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneySummaryView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="movementImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TTJourneysViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneysViewController.h"/>
-        </class>
-        <class className="TTMedalsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTMedalsViewController.h"/>
-        </class>
-        <class className="TTReceiptsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTReceiptsViewController.h"/>
-        </class>
-        <class className="TTTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTTabBarController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
