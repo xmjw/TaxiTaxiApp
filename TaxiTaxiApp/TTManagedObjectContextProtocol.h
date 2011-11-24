@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TTViewController : UIViewController
-{   
-    NSManagedObjectContext *managedObjectContext;
-}
+@protocol TTManagedObjectContextProtocol <NSObject>
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 

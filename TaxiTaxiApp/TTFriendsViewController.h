@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTViewController.h"
+#import "TTManagedObjectContextProtocol.h"
 
-@interface TTFriendsViewController : TTViewController
+@interface TTFriendsViewController : UIViewController <TTManagedObjectContextProtocol>
 
 @end

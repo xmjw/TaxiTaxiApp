@@ -13,11 +13,22 @@
 
 @synthesize currentLocation;
 @synthesize checkinButton;
+@synthesize managedObjectContext;
+@synthesize plateNumberTextView;
+@synthesize scrollView;
+@synthesize mapView;
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark - MapKit View
+
+- (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated
+{
+    
 }
 
 #pragma mark - View lifecycle
@@ -119,13 +130,48 @@
     
 }
 
-- (IBAction) checkin:(id)sender
+
+- (IBAction) keyboardDisplayed: (id) sender
 {
-    NSLog(@"Checkin was called...");
+    
+    float x = 0;
+    float y = 0;
+    
+    
+    CGSize size = [scrollView contentSize];
+    
+    x = size.width;
+    y = size.height;
+    
+    NSLog(@"Keyboard is up. Scroll View is x=%f y=%f",x,y);
+    [scrollView setContentSize:CGSizeMake(320, 400)];
+    
+    [scrollView setFrame:CGRectMake(0, 0, 320, 300)];
+
+    
+    
 }
 
-- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when 
+- (IBAction) keyboardHidden: (id) sender
 {
+    NSLog(@"Keyboard is down again.");
+}
+
+
+- (IBAction) checkin:(id)sender
+{
+    if ([self createCheckinWithPlate:[plateNumberTextView text] onDate:[NSDate date] withLongitude:[longitudeLabel text] withLatitude:[latitudeLabel text]])
+    {
+        NSLog(@"Wrote a checkin to the database");
+    }
+    else NSLog(@"Failed to write the checkin");
+    
+    [plateNumberTextView resignFirstResponder];
+}
+
+- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude
+{
+    
 // Fields from Checkin entity object
 //    @dynamic expense;
 //    @dynamic gpsAccuracy;
@@ -138,11 +184,14 @@
 //    @dynamic wasEnd;
 //    @dynamic wasStart;
 //    @dynamic when;
-    
+        
     Checkin *checkin = (Checkin *)[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
     
     [checkin setPlate:plateNumber];
     [checkin setWhen:when];
+    [checkin setLongitute: longitude];
+    [checkin setLatitude: latitude];
+    
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) 

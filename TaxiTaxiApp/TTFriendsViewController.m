@@ -9,6 +9,7 @@
 #import "TTFriendsViewController.h"
 
 @implementation TTFriendsViewController
+@synthesize managedObjectContext;
 
 - (void)didReceiveMemoryWarning
 {

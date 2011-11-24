@@ -1,15 +1,14 @@
 //
-//  TTMedalsViewController.m
+//  TTTabBarController.m
 //  TaxiTaxiApp
 //
-//  Created by Michael Wawra on 03/11/2011.
+//  Created by Michael Wawra on 23/11/2011.
 //  Copyright (c) 2011 Wawra Corp. All rights reserved.
 //
 
-#import "TTMedalsViewController.h"
+#import "TTTabBarController.h"
 
-@implementation TTMedalsViewController
-@synthesize managedObjectContext;
+@implementation TTTabBarController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,14 +36,28 @@
 }
 */
 
-/*
+-(void) specialButtonPress:(id)sender
+{
+    self.selectedIndex = 2;
+    UIButton* button = (UIButton*)sender;
+    [button setHighlighted:YES];
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Huh, so viewDidLoad was called on the TTTabBarController has %d sub controlls",[[self viewControllers] count]);
 }
-*/
 
+- (void) tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    NSLog(@"tabBar didSelectItem was called...");
+    
+    //Why does this crash?
+    //[super tabBar:tabBar didSelectItem:item];
+}
+     
 - (void)viewDidUnload
 {
     [super viewDidUnload];

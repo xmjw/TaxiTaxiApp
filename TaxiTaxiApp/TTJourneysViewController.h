@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTViewController.h"
+#import "TTManagedObjectContextProtocol.h"
 
-@interface TTJourneysViewController : TTViewController
+@interface TTJourneysViewController : UINavigationController <TTManagedObjectContextProtocol>
 
 @end
