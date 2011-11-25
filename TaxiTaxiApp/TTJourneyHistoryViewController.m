@@ -39,13 +39,10 @@
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    
-    //[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
-    
+}
+
+- (void) refreshData
+{
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
     [request setEntity:entity];
@@ -55,7 +52,7 @@
     [request setSortDescriptors:sortDescriptors];
     //ARC: ![sortDescriptors release];
     //ARC: ![sortDescriptor release];
-
+    
     NSError *error = nil;
     NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     if (mutableFetchResults == nil) 
@@ -67,8 +64,6 @@
     [self setJourneyHistory: mutableFetchResults];
     //ARC: ![mutableFetchResults release];
     //ARC: ![request release];
-    
-    
 }
 
 - (void)viewDidUnload
@@ -81,6 +76,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self refreshData];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

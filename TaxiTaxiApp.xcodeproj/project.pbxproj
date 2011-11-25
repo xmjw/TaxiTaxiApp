@@ -44,6 +44,10 @@
 		7A443E82147DB6FC00068B4E /* Check-In.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A443E80147DB6FC00068B4E /* Check-In.png */; };
 		7A49772D14747510001C4317 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31E714632939005DA431 /* SenTestingKit.framework */; };
 		7A52B985147479FF002937CF /* TTJourneysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A52B984147479FF002937CF /* TTJourneysViewController.m */; };
+		7A9203B614801C2000E34F92 /* taxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9203B414801C2000E34F92 /* taxi.png */; };
+		7A9203B714801C2000E34F92 /* taxi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9203B514801C2000E34F92 /* taxi@2x.png */; };
+		7A9203B914801C2900E34F92 /* taxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9203B814801C2900E34F92 /* taxi.png */; };
+		7A9203BB14801C2D00E34F92 /* taxi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9203BA14801C2D00E34F92 /* taxi@2x.png */; };
 		7A92173B147E72C100FD09DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A92173A147E72C100FD09DB /* MapKit.framework */; };
 		7A93B1801478198100B10643 /* TTJourneySummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A93B17F1478198100B10643 /* TTJourneySummaryView.m */; };
 		7AB0BC2F146DC244008F810E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB0BC2E146DC244008F810E /* CoreData.framework */; };
@@ -87,7 +91,7 @@
 		14D9901B146C266300DAE48F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		14D9902F146C36C800DAE48F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7A13E16014635E9E00BEF171 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		7A2E31BA14632939005DA431 /* TaxiTaxiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiTaxiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A2E31BA14632939005DA431 /* Taxi Taxi!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taxi Taxi!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E31BE14632939005DA431 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A2E31C014632939005DA431 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7A2E31C214632939005DA431 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -118,6 +122,10 @@
 		7A443E80147DB6FC00068B4E /* Check-In.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check-In.png"; sourceTree = "<group>"; };
 		7A52B983147479FF002937CF /* TTJourneysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneysViewController.h; sourceTree = "<group>"; };
 		7A52B984147479FF002937CF /* TTJourneysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneysViewController.m; sourceTree = "<group>"; };
+		7A9203B414801C2000E34F92 /* taxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taxi.png; sourceTree = "<group>"; };
+		7A9203B514801C2000E34F92 /* taxi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taxi@2x.png"; sourceTree = "<group>"; };
+		7A9203B814801C2900E34F92 /* taxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taxi.png; sourceTree = "<group>"; };
+		7A9203BA14801C2D00E34F92 /* taxi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taxi@2x.png"; sourceTree = "<group>"; };
 		7A92173A147E72C100FD09DB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7A93B17E1478198100B10643 /* TTJourneySummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneySummaryView.h; sourceTree = "<group>"; };
 		7A93B17F1478198100B10643 /* TTJourneySummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneySummaryView.m; sourceTree = "<group>"; };
@@ -134,7 +142,7 @@
 		7ABFD0741477FEFC003101F1 /* up-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-down.png"; sourceTree = "<group>"; };
 		7ABFD0751477FEFC003101F1 /* up-same.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-same.png"; sourceTree = "<group>"; };
 		7ABFD0761477FEFC003101F1 /* up-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-up.png"; sourceTree = "<group>"; };
-		7AE59D681463565800CDECA9 /* TTCheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TTCheckOutViewController.h; sourceTree = "<group>"; };
+		7AE59D681463565800CDECA9 /* TTCheckOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCheckOutViewController.h; sourceTree = "<group>"; };
 		7AE59D691463565800CDECA9 /* TTCheckOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCheckOutViewController.m; sourceTree = "<group>"; };
 		7AE6633F147AFBD300096978 /* TTJourneyHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneyHistoryViewController.h; sourceTree = "<group>"; };
 		7AE66340147AFBD300096978 /* TTJourneyHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneyHistoryViewController.m; sourceTree = "<group>"; };
@@ -170,6 +178,8 @@
 		7A2E31AF14632938005DA431 = {
 			isa = PBXGroup;
 			children = (
+				7A9203BA14801C2D00E34F92 /* taxi@2x.png */,
+				7A9203B814801C2900E34F92 /* taxi.png */,
 				7A2E31C414632939005DA431 /* TaxiTaxiApp */,
 				7A2E31ED14632939005DA431 /* TaxiTaxiAppTests */,
 				7A2E31BD14632939005DA431 /* Frameworks */,
@@ -180,7 +190,7 @@
 		7A2E31BB14632939005DA431 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7A2E31BA14632939005DA431 /* TaxiTaxiApp.app */,
+				7A2E31BA14632939005DA431 /* Taxi Taxi!.app */,
 				7A2E31E614632939005DA431 /* TaxiTaxiAppTests.octest */,
 			);
 			name = Products;
@@ -301,6 +311,8 @@
 		7AE59D7214635BA000CDECA9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7A9203B414801C2000E34F92 /* taxi.png */,
+				7A9203B514801C2000E34F92 /* taxi@2x.png */,
 				7A443E7F147DB6FC00068B4E /* Check-In-Highlighted.png */,
 				7A443E80147DB6FC00068B4E /* Check-In.png */,
 				7A443E78147DB6C300068B4E /* Check-In-Highlighted@2x.png */,
@@ -351,7 +363,7 @@
 			);
 			name = TaxiTaxiApp;
 			productName = TaxiTaxiApp;
-			productReference = 7A2E31BA14632939005DA431 /* TaxiTaxiApp.app */;
+			productReference = 7A2E31BA14632939005DA431 /* Taxi Taxi!.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7A2E31E514632939005DA431 /* TaxiTaxiAppTests */ = {
@@ -436,6 +448,10 @@
 				7A443E7E147DB6C300068B4E /* Check-In@2x.png in Resources */,
 				7A443E81147DB6FC00068B4E /* Check-In-Highlighted.png in Resources */,
 				7A443E82147DB6FC00068B4E /* Check-In.png in Resources */,
+				7A9203B614801C2000E34F92 /* taxi.png in Resources */,
+				7A9203B714801C2000E34F92 /* taxi@2x.png in Resources */,
+				7A9203B914801C2900E34F92 /* taxi.png in Resources */,
+				7A9203BB14801C2D00E34F92 /* taxi@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +567,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				New_Setting = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -569,6 +586,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				New_Setting = "";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -585,7 +603,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaxiTaxiApp/TaxiTaxiApp-Prefix.pch";
 				INFOPLIST_FILE = "TaxiTaxiApp/TaxiTaxiApp-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Taxi Taxi!";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -600,7 +618,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TaxiTaxiApp/TaxiTaxiApp-Prefix.pch";
 				INFOPLIST_FILE = "TaxiTaxiApp/TaxiTaxiApp-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Taxi Taxi!";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

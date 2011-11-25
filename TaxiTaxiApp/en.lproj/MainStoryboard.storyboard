@@ -86,6 +86,7 @@
                     <tabBarItem key="tabBarItem" title="Journey" image="car.png" id="Yoz-gt-ASG"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="y6c-PM-Hys">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.41128105279999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="per-iQ-RjI" kind="relationship" relationship="rootViewController" id="2P7-Wy-P4w"/>
@@ -134,11 +135,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="3Rd-Ho-9BC" detailTextLabel="1EL-ZG-Cb0" style="IBUITableViewCellStyleSubtitle" id="nI0-LT-gDf">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="1" textLabel="3Rd-Ho-9BC" detailTextLabel="1EL-ZG-Cb0" style="IBUITableViewCellStyleSubtitle" id="nI0-LT-gDf">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Rd-Ho-9BC">
@@ -158,6 +159,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="JxJ-cC-7j6" kind="push" id="Nuw-AC-BcS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -169,6 +173,35 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1674" y="-757"/>
+        </scene>
+        <scene sceneID="9jG-Po-QiE">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlY-wJ-fgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="JxJ-cC-7j6" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g8Q-1p-7Sr">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Qpc-vD-swT">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JxJ-cC-7j6" id="r4R-74-ML6"/>
+                            <outlet property="delegate" destination="JxJ-cC-7j6" id="4Mo-pr-4H5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Details" id="pTR-v9-6qm"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2087" y="-757"/>
         </scene>
         <scene sceneID="y1W-dl-zad">
             <objects>

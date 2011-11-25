@@ -14,6 +14,10 @@
     NSMutableArray *journeyHistory;
 }
 
+#pragma Properties..
 @property (nonatomic, retain) NSMutableArray *journeyHistory;
+
+#pragma Methods
+- (void) refreshData;
 
 @end
