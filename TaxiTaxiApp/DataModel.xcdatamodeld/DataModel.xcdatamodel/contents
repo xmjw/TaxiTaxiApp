@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Checkin" representedClassName="Checkin" syncable="YES">
+        <attribute name="checkin" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="checkout" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="expense" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="gpsAccuracy" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,9 +13,8 @@
         <attribute name="synced" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="wasEnd" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="wasStart" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="when" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Checkin" positionX="160" positionY="192" width="218" height="210"/>
+        <element name="Checkin" positionX="160" positionY="192" width="218" height="225"/>
     </elements>
 </model>

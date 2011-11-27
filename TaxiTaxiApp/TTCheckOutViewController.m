@@ -9,7 +9,18 @@
 #import "TTCheckOutViewController.h"
 
 @implementation TTCheckOutViewController
+
+@synthesize currentLocation;
 @synthesize managedObjectContext;
+@synthesize plateNumber;
+@synthesize price;
+@synthesize startLatitude;
+@synthesize startLongitude;
+@synthesize endLatitude;
+@synthesize endLongitude;
+@synthesize concludesJourney; 
+@synthesize scrollView;
+@synthesize startCheckinTime;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +56,38 @@
 }
 */
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    Checkin *checkin = [self getLastCheckin];
+    
+    [startLatitude setText: checkin.latitude];
+    [startLongitude setText: checkin.longitute];
+    [startCheckinTime setText: @"time will go here"];
+    
+    [endLatitude setText:@""];
+    [endLongitude setText:@""];
+    [plateNumber setText: checkin.plate];
+    
+    // Create location manager object
+    if (locationManager == nil)
+    {
+        locationManager = [[CLLocationManager alloc] init];
+    }
+    [locationManager setDelegate:self];
+    
+    // We want all results from the location manager
+    [locationManager setDistanceFilter:kCLDistanceFilterNone];
+    
+    // And we want it to be as accurate as possible
+    // regardless of how much time/power it takes
+    [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    
+    // Tell our manager to start looking for its location immediately
+    [locationManager startUpdatingLocation];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -56,6 +99,129 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark Location
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"Location: %@", newLocation);
+    
+    currentLocation = newLocation;
+    
+    [locationManager stopUpdatingLocation];
+    locationManager = nil;
+    
+    NSString *lat = [NSString stringWithFormat:@"%1.8f", 
+                     newLocation.coordinate.latitude];
+    [endLatitude setText:lat];
+    
+    NSString *longt = [NSString stringWithFormat:@"%1.8f", 
+                       newLocation.coordinate.longitude];
+    [endLongitude setText:longt];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error
+{
+    NSLog(@"Could not find location: %@", error);
+    
+    [locationManager stopUpdatingLocation];
+    locationManager = nil;
+}
+
+
+#pragma Keyboard Actions
+
+- (IBAction) keyboardDisplayed: (id) sender
+{
+    
+    float x = 0;
+    float y = 0;
+    
+    
+    CGSize size = [scrollView contentSize];
+    
+    x = size.width;
+    y = size.height;
+    
+    NSLog(@"Keyboard is up. Scroll View is x=%f y=%f",x,y);
+    [scrollView setContentSize:CGSizeMake(320, 400)];
+    
+    [scrollView setFrame:CGRectMake(0, 0, 320, 300)];
+}
+
+- (IBAction) keyboardHidden: (id) sender
+{
+    NSLog(@"Keyboard is down again.");
+}
+
+#pragma Checkin actions...
+
+- (BOOL) createCheckoutWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)price
+{
+    Checkin *checkin = (Checkin *)[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
+    
+    [checkin setPlate:plateNumber];
+    [checkin setCheckout: when];
+    [checkin setLongitute: longitude];
+    [checkin setLatitude: latitude];
+    [checkin setPrice: price];
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) 
+    {
+        NSLog(@"Failed to create basic checkin object");
+        return NO;
+    }
+    NSLog(@"Created new checkin and commited to managedObjectContext");
+    return YES;}
+
+- (BOOL) createCheckoutFromCheckin:(Checkin*)checkin onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)price
+{
+    [checkin setCheckout: when];
+    [checkin setLongitute: longitude];
+    [checkin setLatitude: latitude];
+    [checkin setPrice: price];
+    
+    NSError *error = nil;
+    if (![managedObjectContext save:&error]) 
+    {
+        NSLog(@"Failed to create basic checkin object");
+        return NO;
+    }
+    NSLog(@"Created new checkin and commited to managedObjectContext");
+    return YES;
+}
+
+//Gets the last checkin, or null, so we can either close that last checkin, or create a new one.
+//i.e., the last journey is not the current one, or the user is checking in and out of a taxi.
+- (Checkin *) getLastCheckin
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *checkinDateSort = [[NSSortDescriptor alloc] initWithKey:@"checkin" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:checkinDateSort, nil];
+    [request setSortDescriptors:sortDescriptors];
+    [request setFetchLimit:1];
+    
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) 
+    {
+        NSLog(@"Failed to get checkin objects.");
+    }
+    else NSLog(@"Got %d records from checkin query...",[mutableFetchResults count]);
+    
+    if (mutableFetchResults != nil && mutableFetchResults.count == 1)
+    {
+        return [mutableFetchResults objectAtIndex: 0];
+    }
+    return nil;
 }
 
 @end

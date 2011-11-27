@@ -47,11 +47,11 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
     [request setEntity:entity];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"when" ascending:NO];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    NSSortDescriptor *checkinDateSort = [[NSSortDescriptor alloc] initWithKey:@"checkin" ascending:NO];
+    NSSortDescriptor *checkoutDateSort = [[NSSortDescriptor alloc] initWithKey:@"checkout"ascending: NO];
+    
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:checkinDateSort,checkoutDateSort, nil];
     [request setSortDescriptors:sortDescriptors];
-    //ARC: ![sortDescriptors release];
-    //ARC: ![sortDescriptor release];
     
     NSError *error = nil;
     NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
@@ -62,8 +62,6 @@
     else NSLog(@"Got %d records from checkin query...",[mutableFetchResults count]);
     
     [self setJourneyHistory: mutableFetchResults];
-    //ARC: ![mutableFetchResults release];
-    //ARC: ![request release];
 }
 
 - (void)viewDidUnload
@@ -132,7 +130,9 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd/mm/yyyy hh:mm"];
     
-    NSString *formattedDateString = [dateFormatter stringFromDate: checkin.when];
+    NSDate *when = (checkin.checkin != nil ? checkin.checkin : checkin.checkout);
+    
+    NSString *formattedDateString = [dateFormatter stringFromDate: when];
     
     NSString * subtitle = [NSString stringWithFormat:@"£%@, %@", [[checkin price]  stringValue] , formattedDateString];
     

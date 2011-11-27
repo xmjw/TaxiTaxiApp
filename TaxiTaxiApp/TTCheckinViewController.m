@@ -188,11 +188,10 @@
     Checkin *checkin = (Checkin *)[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
     
     [checkin setPlate:plateNumber];
-    [checkin setWhen: when];
+    [checkin setCheckin: when];
     [checkin setLongitute: longitude];
     [checkin setLatitude: latitude];
-    [checkin setPrice: [NSNumber numberWithFloat: 123.32f]];
-    
+       
     NSError *error = nil;
     if (![managedObjectContext save:&error]) 
     {

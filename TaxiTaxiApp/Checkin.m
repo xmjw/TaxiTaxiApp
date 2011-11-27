@@ -21,6 +21,7 @@
 @dynamic synced;
 @dynamic wasEnd;
 @dynamic wasStart;
-@dynamic when;
+@dynamic checkin;
+@dynamic checkout;
 
 @end

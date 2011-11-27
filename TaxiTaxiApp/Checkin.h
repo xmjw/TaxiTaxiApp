@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSNumber * synced;
 @property (nonatomic, retain) NSNumber * wasEnd;
 @property (nonatomic, retain) NSNumber * wasStart;
-@property (nonatomic, retain) NSDate * when;
+@property (nonatomic, retain) NSDate * checkin;
+@property (nonatomic, retain) NSDate * checkout;
 
 @end
