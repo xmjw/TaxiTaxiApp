@@ -129,7 +129,12 @@
     
     [[cell textLabel] setText:[checkin plate]];
     
-    NSString * subtitle = [NSString stringWithFormat:@"%f %@", checkin.price, checkin.when,nil];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/mm/yyyy hh:mm"];
+    
+    NSString *formattedDateString = [dateFormatter stringFromDate: checkin.when];
+    
+    NSString * subtitle = [NSString stringWithFormat:@"£%@, %@", [[checkin price]  stringValue] , formattedDateString];
     
     [[cell detailTextLabel] setText:subtitle];
     [[cell detailTextLabel] setHidden: NO];

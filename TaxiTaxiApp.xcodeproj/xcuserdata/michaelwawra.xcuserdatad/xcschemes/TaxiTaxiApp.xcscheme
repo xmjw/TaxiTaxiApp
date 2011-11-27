@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7A2E31B914632939005DA431"
-               BuildableName = "TaxiTaxiApp.app"
+               BuildableName = "Taxi Taxi!.app"
                BlueprintName = "TaxiTaxiApp"
                ReferencedContainer = "container:TaxiTaxiApp.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A2E31B914632939005DA431"
-            BuildableName = "TaxiTaxiApp.app"
+            BuildableName = "Taxi Taxi!.app"
             BlueprintName = "TaxiTaxiApp"
             ReferencedContainer = "container:TaxiTaxiApp.xcodeproj">
          </BuildableReference>
@@ -60,7 +60,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A2E31B914632939005DA431"
-            BuildableName = "TaxiTaxiApp.app"
+            BuildableName = "Taxi Taxi!.app"
             BlueprintName = "TaxiTaxiApp"
             ReferencedContainer = "container:TaxiTaxiApp.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7A2E31B914632939005DA431"
-            BuildableName = "TaxiTaxiApp.app"
+            BuildableName = "Taxi Taxi!.app"
             BlueprintName = "TaxiTaxiApp"
             ReferencedContainer = "container:TaxiTaxiApp.xcodeproj">
          </BuildableReference>

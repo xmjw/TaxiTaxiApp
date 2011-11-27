@@ -66,6 +66,13 @@
         default:
             break;
     }
+    
+    
+}
+
+- (void) didMoveToWindow
+{
+    [self initCustom];
 }
 
 - (id)init
