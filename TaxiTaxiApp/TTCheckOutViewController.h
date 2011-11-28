@@ -44,5 +44,6 @@
 - (BOOL) createCheckoutFromCheckin:(Checkin*)checkin onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)price;
 - (BOOL) createCheckoutWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)price;
 - (Checkin *) getLastCheckin;
+- (IBAction) checkout:(id)sender;
 
 @end

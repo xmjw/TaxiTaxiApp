@@ -64,7 +64,13 @@
     
     [startLatitude setText: checkin.latitude];
     [startLongitude setText: checkin.longitute];
-    [startCheckinTime setText: @"time will go here"];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    NSString *formattedDateString = [dateFormatter stringFromDate: checkin.checkin];
+
+    [startCheckinTime setText: formattedDateString];
+
     
     [endLatitude setText:@""];
     [endLongitude setText:@""];
@@ -148,9 +154,9 @@
     y = size.height;
     
     NSLog(@"Keyboard is up. Scroll View is x=%f y=%f",x,y);
-    [scrollView setContentSize:CGSizeMake(320, 400)];
+    [scrollView setContentSize:CGSizeMake(320, 330)];
     
-    [scrollView setFrame:CGRectMake(0, 0, 320, 300)];
+    [scrollView setFrame:CGRectMake(0, 0, 320, 250)];
 }
 
 - (IBAction) keyboardHidden: (id) sender
@@ -159,6 +165,14 @@
 }
 
 #pragma Checkin actions...
+
+- (IBAction) checkout:(id)sender
+{
+    NSLog(@"Checkout was called.");
+    
+    if ([plateNumber isFirstResponder]) [plateNumber resignFirstResponder];
+    if ([price isFirstResponder]) [price resignFirstResponder];
+}
 
 - (BOOL) createCheckoutWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)price
 {
