@@ -189,9 +189,10 @@
     
     [checkin setPlate:plateNumber];
     [checkin setCheckin: when];
-    [checkin setLongitute: longitude];
-    [checkin setLatitude: latitude];
-       
+    [checkin setStartLongitude: longitude];
+    [checkin setStartLatitude: latitude];
+    [checkin setWasStart: [NSNumber numberWithBool: YES]];
+    
     NSError *error = nil;
     if (![managedObjectContext save:&error]) 
     {

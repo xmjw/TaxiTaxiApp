@@ -13,8 +13,10 @@
 
 @dynamic expense;
 @dynamic gpsAccuracy;
-@dynamic latitude;
-@dynamic longitute;
+@dynamic startLatitude;
+@dynamic startLongitude;
+@dynamic endLatitude;
+@dynamic endLongitude;
 @dynamic plate;
 @dynamic price;
 @dynamic remoteId;

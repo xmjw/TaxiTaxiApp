@@ -62,8 +62,8 @@
     
     Checkin *checkin = [self getLastCheckin];
     
-    [startLatitude setText: checkin.latitude];
-    [startLongitude setText: checkin.longitute];
+    [startLatitude setText: checkin.startLatitude];
+    [startLongitude setText: checkin.startLongitude];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
@@ -172,17 +172,34 @@
     
     if ([plateNumber isFirstResponder]) [plateNumber resignFirstResponder];
     if ([price isFirstResponder]) [price resignFirstResponder];
+    
+    NSNumber *priceOfJourney = 0;
+
+    if (concludesJourney.on)
+    {
+        //conclude the previous journey...
+        Checkin *checkin = [self getLastCheckin];
+        [self createCheckoutFromCheckin:checkin onDate:[NSDate date] withLongitude: endLongitude.text withLatitude:endLatitude.text withPrice: priceOfJourney];
+    }
+    else
+    {
+        //don't conclude the previous journey, this is a new one.
+        [self createCheckoutWithPlate: plateNumber.text onDate: [NSDate date] withLongitude:endLongitude.text withLatitude:endLatitude.text withPrice:priceOfJourney];
+    }
+    
 }
 
-- (BOOL) createCheckoutWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)price
+- (BOOL) createCheckoutWithPlate:(NSString*)plate onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)priceOfJourney
 {
     Checkin *checkin = (Checkin *)[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
     
-    [checkin setPlate:plateNumber];
+    [checkin setPlate:plate];
     [checkin setCheckout: when];
-    [checkin setLongitute: longitude];
-    [checkin setLatitude: latitude];
-    [checkin setPrice: price];
+    [checkin setEndLongitude: longitude];
+    [checkin setEndLatitude: latitude];
+    [checkin setPrice: priceOfJourney];
+    [checkin setWasStart: [NSNumber numberWithBool: NO]];
+    [checkin setWasEnd: [NSNumber numberWithBool: YES]];
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) 
@@ -193,12 +210,13 @@
     NSLog(@"Created new checkin and commited to managedObjectContext");
     return YES;}
 
-- (BOOL) createCheckoutFromCheckin:(Checkin*)checkin onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)price
+- (BOOL) createCheckoutFromCheckin:(Checkin*)checkin onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)priceOfJourney
 {
     [checkin setCheckout: when];
-    [checkin setLongitute: longitude];
-    [checkin setLatitude: latitude];
-    [checkin setPrice: price];
+    [checkin setEndLongitude: longitude];
+    [checkin setEndLatitude: latitude];
+    [checkin setPrice: priceOfJourney];
+    [checkin setWasEnd: [NSNumber numberWithBool: YES]];
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) 

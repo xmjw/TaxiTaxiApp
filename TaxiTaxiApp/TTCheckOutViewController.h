@@ -41,8 +41,8 @@
 - (IBAction) keyboardDisplayed: (id) sender;
 - (IBAction) keyboardHidden: (id) sender;
 
-- (BOOL) createCheckoutFromCheckin:(Checkin*)checkin onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)price;
-- (BOOL) createCheckoutWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)price;
+- (BOOL) createCheckoutWithPlate:(NSString*)plate onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)priceOfJourney;
+- (BOOL) createCheckoutFromCheckin:(Checkin*)checkin onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)priceOfJourney;
 - (Checkin *) getLastCheckin;
 - (IBAction) checkout:(id)sender;
 
