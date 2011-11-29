@@ -192,6 +192,7 @@
     [checkin setStartLongitude: longitude];
     [checkin setStartLatitude: latitude];
     [checkin setWasStart: [NSNumber numberWithBool: YES]];
+    [checkin setWasEnd: [NSNumber numberWithBool:NO]];
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) 

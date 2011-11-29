@@ -62,19 +62,31 @@
     
     Checkin *checkin = [self getLastCheckin];
     
-    [startLatitude setText: checkin.startLatitude];
-    [startLongitude setText: checkin.startLongitude];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm"];
-    NSString *formattedDateString = [dateFormatter stringFromDate: checkin.checkin];
+    NSLog(@"Checking if journey was an end state: %@ vs %@",checkin.wasEnd,[NSNumber numberWithBool: NO]);
+    //this doesn't seem to work very well?
+    if (checkin.wasEnd == 0)
+    {
+        [startLatitude setText: checkin.startLatitude];
+        [startLongitude setText: checkin.startLongitude];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm"];
+        NSString *formattedDateString = [dateFormatter stringFromDate: checkin.checkin];
 
-    [startCheckinTime setText: formattedDateString];
+        [startCheckinTime setText: formattedDateString];
 
+        
+        [endLatitude setText:@""];
+        [endLongitude setText:@""];
+        [plateNumber setText: checkin.plate];
+    }
+    else 
+    {
+        [concludesJourney setOn:NO];
+        [concludesJourney setEnabled:NO];
+        
+    }
     
-    [endLatitude setText:@""];
-    [endLongitude setText:@""];
-    [plateNumber setText: checkin.plate];
     
     // Create location manager object
     if (locationManager == nil)
@@ -162,6 +174,8 @@
 - (IBAction) keyboardHidden: (id) sender
 {
     NSLog(@"Keyboard is down again.");
+    [scrollView setContentSize:CGSizeMake(320, 330)];
+    [scrollView setFrame:CGRectMake(0, 0, 320, 330)];
 }
 
 #pragma Checkin actions...
@@ -173,18 +187,22 @@
     if ([plateNumber isFirstResponder]) [plateNumber resignFirstResponder];
     if ([price isFirstResponder]) [price resignFirstResponder];
     
-    NSNumber *priceOfJourney = 0;
+    NSNumber *priceOfJourney = [NSNumber numberWithFloat:123.43];
 
     if (concludesJourney.on)
     {
         //conclude the previous journey...
         Checkin *checkin = [self getLastCheckin];
-        [self createCheckoutFromCheckin:checkin onDate:[NSDate date] withLongitude: endLongitude.text withLatitude:endLatitude.text withPrice: priceOfJourney];
+        if ([self createCheckoutFromCheckin:checkin onDate:[NSDate date] withLongitude: endLongitude.text withLatitude:endLatitude.text withPrice: priceOfJourney])
+            NSLog(@"Created a Checkin from existing plate with %@",checkin.plate);
+        else NSLog(@"Failed to create checkout! Panic.");
     }
     else
     {
         //don't conclude the previous journey, this is a new one.
-        [self createCheckoutWithPlate: plateNumber.text onDate: [NSDate date] withLongitude:endLongitude.text withLatitude:endLatitude.text withPrice:priceOfJourney];
+        if ([self createCheckoutWithPlate: plateNumber.text onDate: [NSDate date] withLongitude:endLongitude.text withLatitude:endLatitude.text withPrice:priceOfJourney])
+            NSLog(@"Create a Checking for a new plate with %@",plateNumber.text);
+        else NSLog(@"Failed to create checkout! Panic.");
     }
     
 }
