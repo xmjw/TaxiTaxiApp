@@ -56,25 +56,26 @@
 }
 */
 
-- (void) viewWillAppear:(BOOL)animated
+-(void) loadData
 {
-    [super viewWillAppear:animated];
-    
     Checkin *checkin = [self getLastCheckin];
     
-    NSLog(@"Checking if journey was an end state: %@ vs %@",checkin.wasEnd,[NSNumber numberWithBool: NO]);
+    if (checkin.wasEnd != nil) NSLog(@"Checking if journey was an end state: %d vs %d",[[checkin wasEnd] intValue],([[checkin wasEnd] intValue] == 0));
     //this doesn't seem to work very well?
-    if (checkin.wasEnd == 0)
+    if (checkin != nil && [[checkin wasEnd] intValue] == 0)
     {
+        NSLog(@"Continuation Route...");
         [startLatitude setText: checkin.startLatitude];
         [startLongitude setText: checkin.startLongitude];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm"];
         NSString *formattedDateString = [dateFormatter stringFromDate: checkin.checkin];
-
+        
         [startCheckinTime setText: formattedDateString];
-
+        
+        [concludesJourney setOn:YES];
+        [concludesJourney setEnabled:YES];
         
         [endLatitude setText:@""];
         [endLongitude setText:@""];
@@ -82,11 +83,18 @@
     }
     else 
     {
+        NSLog(@"New Checkin Route.");
         [concludesJourney setOn:NO];
         [concludesJourney setEnabled:NO];
         
     }
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
+    [self loadData];
     
     // Create location manager object
     if (locationManager == nil)
@@ -204,6 +212,8 @@
             NSLog(@"Create a Checking for a new plate with %@",plateNumber.text);
         else NSLog(@"Failed to create checkout! Panic.");
     }
+    
+    [self loadData];
     
 }
 
