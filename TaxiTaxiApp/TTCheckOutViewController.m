@@ -195,8 +195,12 @@
     if ([plateNumber isFirstResponder]) [plateNumber resignFirstResponder];
     if ([price isFirstResponder]) [price resignFirstResponder];
     
-    NSNumber *priceOfJourney = [NSNumber numberWithFloat:123.43];
-
+    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber *priceOfJourney = [f numberFromString:price.text];
+    
+    if (priceOfJourney == nil) NSLog(@"Failed to parse the number.");
+    
     if (concludesJourney.on)
     {
         //conclude the previous journey...
