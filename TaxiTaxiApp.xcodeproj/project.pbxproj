@@ -42,6 +42,8 @@
 		7A9203BB14801C2D00E34F92 /* taxi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9203BA14801C2D00E34F92 /* taxi@2x.png */; };
 		7A92173B147E72C100FD09DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A92173A147E72C100FD09DB /* MapKit.framework */; };
 		7A93B1801478198100B10643 /* TTJourneySummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A93B17F1478198100B10643 /* TTJourneySummaryView.m */; };
+		7A96CA39148AAB3C00A325A2 /* TTLiveTrackViewContorller.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A96CA38148AAB3C00A325A2 /* TTLiveTrackViewContorller.m */; };
+		7A96CA3C148AAC2900A325A2 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A96CA3B148AAC2900A325A2 /* 103-map.png */; };
 		7A99B63714804B0E00314CE1 /* down-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A99B62E14804B0E00314CE1 /* down-down.png */; };
 		7A99B63814804B0E00314CE1 /* down-same.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A99B62F14804B0E00314CE1 /* down-same.png */; };
 		7A99B63914804B0E00314CE1 /* down-up.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A99B63014804B0E00314CE1 /* down-up.png */; };
@@ -123,6 +125,9 @@
 		7A93B17E1478198100B10643 /* TTJourneySummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneySummaryView.h; sourceTree = "<group>"; };
 		7A93B17F1478198100B10643 /* TTJourneySummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneySummaryView.m; sourceTree = "<group>"; };
 		7A93B181147819F900B10643 /* TTManagedObjectContextProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTManagedObjectContextProtocol.h; sourceTree = "<group>"; };
+		7A96CA37148AAB3C00A325A2 /* TTLiveTrackViewContorller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLiveTrackViewContorller.h; sourceTree = "<group>"; };
+		7A96CA38148AAB3C00A325A2 /* TTLiveTrackViewContorller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLiveTrackViewContorller.m; sourceTree = "<group>"; };
+		7A96CA3B148AAC2900A325A2 /* 103-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "103-map.png"; sourceTree = "<group>"; };
 		7A99B62E14804B0E00314CE1 /* down-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-down.png"; sourceTree = "<group>"; };
 		7A99B62F14804B0E00314CE1 /* down-same.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-same.png"; sourceTree = "<group>"; };
 		7A99B63014804B0E00314CE1 /* down-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-up.png"; sourceTree = "<group>"; };
@@ -295,6 +300,8 @@
 				7AE66340147AFBD300096978 /* TTJourneyHistoryViewController.m */,
 				7A443E59147D8CF900068B4E /* TTTabBarController.h */,
 				7A443E5A147D8CF900068B4E /* TTTabBarController.m */,
+				7A96CA37148AAB3C00A325A2 /* TTLiveTrackViewContorller.h */,
+				7A96CA38148AAB3C00A325A2 /* TTLiveTrackViewContorller.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 		7AE59D7214635BA000CDECA9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7A96CA3B148AAC2900A325A2 /* 103-map.png */,
 				7A99B62D14804AE500314CE1 /* Spending Arrows */,
 				7A9203BA14801C2D00E34F92 /* taxi@2x.png */,
 				7A9203B814801C2900E34F92 /* taxi.png */,
@@ -464,6 +472,7 @@
 				7A99B64F14804B1A00314CE1 /* up-down@2x.png in Resources */,
 				7A99B65014804B1A00314CE1 /* up-same@2x.png in Resources */,
 				7A99B65114804B1A00314CE1 /* up-up@2x.png in Resources */,
+				7A96CA3C148AAC2900A325A2 /* 103-map.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +519,7 @@
 				7A93B1801478198100B10643 /* TTJourneySummaryView.m in Sources */,
 				7AE66341147AFBD300096978 /* TTJourneyHistoryViewController.m in Sources */,
 				7A443E5B147D8CF900068B4E /* TTTabBarController.m in Sources */,
+				7A96CA39148AAB3C00A325A2 /* TTLiveTrackViewContorller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,11 @@
 //
 
 #import "TTJourneySummaryView.h"
+#import "Checkin.h"
 
 @implementation TTJourneySummaryView
 
+@synthesize managedObjectContext;
 @synthesize movementImage;
 
 -(void)initCustom
@@ -68,6 +70,31 @@
     }
     
     
+}
+
+- (void) weekChangeData
+{
+    //get the last month, current month, last week, and current week to see what the change is.
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
+    [request setEntity:entity];
+    
+    NSSortDescriptor *checkinDateSort = [[NSSortDescriptor alloc] initWithKey:@"checkin" ascending:NO];
+    NSSortDescriptor *checkoutDateSort = [[NSSortDescriptor alloc] initWithKey:@"checkout"ascending: NO];
+    
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:checkinDateSort,checkoutDateSort, nil];
+    [request setSortDescriptors:sortDescriptors];
+    
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) 
+    {
+        NSLog(@"Failed to get checkin objects.");
+    }
+    else NSLog(@"Got %d records from checkin query...",[mutableFetchResults count]);
+    
+    //[self setJourneyHistory: mutableFetchResults];
 }
 
 - (void) didMoveToWindow
