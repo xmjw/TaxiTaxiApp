@@ -43,7 +43,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"Current Visible View Controller =%@",[self visibleViewController]);
 
+    id<TTManagedObjectContextProtocol> managedObjectView = (id<TTManagedObjectContextProtocol>) [[self visibleViewController] view];
+    
+    [managedObjectView setManagedObjectContext:managedObjectContext];
 }
 
 - (void) pushViewController:(UIViewController *) view animated:(BOOL) animated
@@ -54,6 +59,7 @@
     
     id<TTManagedObjectContextProtocol> managedObjectView = (id<TTManagedObjectContextProtocol>) view;
     
+    NSLog(@"Sending managedObjectContext to current view %@",managedObjectView);
     [managedObjectView setManagedObjectContext:managedObjectContext];
     
     [super pushViewController:view animated:animated];

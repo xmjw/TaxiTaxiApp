@@ -13,6 +13,8 @@
 
 @synthesize managedObjectContext;
 @synthesize movementImage;
+@synthesize weekSpend;
+@synthesize monthSpend;
 
 -(void)initCustom
 {
@@ -28,63 +30,41 @@
     {
         NSLog(@"Found a %@",views);
     }
-    
-    movementImage = (UIImageView *)[self viewWithTag: 1];
-    
-    //test the look of different images...
-    int dir =  (arc4random() % 9) + 1;
-    
-    NSLog(@"%d is chosen",dir);
-    
-    switch(dir)
-    {
-        case 0: 
-            [movementImage setImage:[UIImage imageNamed:@"up-up.png"]]; 
-            break;
-        case 1: 
-            [movementImage setImage:[UIImage imageNamed:@"up-down.png"]]; 
-            break;
-        case 2: 
-            [movementImage setImage:[UIImage imageNamed:@"up-same.png"]]; 
-            break;
-        case 3: 
-            [movementImage setImage:[UIImage imageNamed:@"same-up.png"]]; 
-            break;
-        case 4: 
-            [movementImage setImage:[UIImage imageNamed:@"same-down.png"]]; 
-            break;
-        case 5: 
-            [movementImage setImage:[UIImage imageNamed:@"same-same.png"]]; 
-            break;
-        case 6: 
-            [movementImage setImage:[UIImage imageNamed:@"down-up.png"]]; 
-            break;
-        case 7: 
-            [movementImage setImage:[UIImage imageNamed:@"down-down.png"]]; 
-            break;
-        case 8: 
-            [movementImage setImage:[UIImage imageNamed:@"down-same.png"]]; 
-            break;
-        default:
-            break;
-    }
-    
-    
 }
 
-- (void) weekChangeData
+
+-(float) sumSpend: (NSMutableArray *) journeys
 {
+    float total=0;
+    
+    for (Checkin *c in journeys)
+    {
+        total += [[c price] floatValue];
+    }
+    
+    return total;
+}
+
+- (NSString *) monthChangeData
+{
+     
+    int thisMonthCount=0;
+    int lastMonthCount=0;
+    
     //get the last month, current month, last week, and current week to see what the change is.
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
-    [request setEntity:entity];
+    [request setEntity:entity];    
     
-    NSSortDescriptor *checkinDateSort = [[NSSortDescriptor alloc] initWithKey:@"checkin" ascending:NO];
-    NSSortDescriptor *checkoutDateSort = [[NSSortDescriptor alloc] initWithKey:@"checkout"ascending: NO];
+    NSDate *now = [NSDate date];
+	NSDateComponents *dc = [[NSDateComponents alloc] init];
+	[dc setMonth:-1];
+	NSDate *oneMonthAgo = [[NSCalendar currentCalendar] dateByAddingComponents:dc toDate:now options:0];
     
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:checkinDateSort,checkoutDateSort, nil];
-    [request setSortDescriptors:sortDescriptors];
+    NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"checkin > %@ or checkout > %@ ",oneMonthAgo,oneMonthAgo];
+    
+    [request setPredicate:datePredicate];
     
     NSError *error = nil;
     NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
@@ -92,13 +72,139 @@
     {
         NSLog(@"Failed to get checkin objects.");
     }
-    else NSLog(@"Got %d records from checkin query...",[mutableFetchResults count]);
+    else 
+    {
+        thisMonthCount = [mutableFetchResults count];
+        NSLog(@"Last month has %d records",[mutableFetchResults count]);
+        [monthSpend setText: [NSString stringWithFormat:@"£%1.2f", [self sumSpend:mutableFetchResults]]];
+    }
+    
+    request = [[NSFetchRequest alloc] init];
+    [request setEntity:entity];    
+    
+    dc = [[NSDateComponents alloc] init];
+	[dc setMonth:-2];
+	NSDate *twoMonthsAgo = [[NSCalendar currentCalendar] dateByAddingComponents:dc toDate:now options:0];
+    
+    datePredicate = [NSPredicate predicateWithFormat:@"(checkin > %@ or checkout > %@) and (checkin < %@ or checkout < %@) ",twoMonthsAgo,twoMonthsAgo,oneMonthAgo,oneMonthAgo];
+    
+    [request setPredicate:datePredicate];
+    
+    error = nil;
+    mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) 
+    {
+        NSLog(@"Failed to get checkin objects.");
+    }
+    else 
+    {
+        lastMonthCount = [mutableFetchResults count];
+        NSLog(@"Previous month has %d records.",[mutableFetchResults count]);
+    }
+    
+    //Work out which of the 3 week components to display.
+    if (lastMonthCount > thisMonthCount) 
+    {
+        return @"down";
+    }
+    else if (lastMonthCount < thisMonthCount)
+    {
+        return @"up";
+    }
+    else 
+    {
+        return @"same";
+    }
+
+    
+
+}
+
+- (NSString *) weekChangeData
+{
+    int thisWeekCount=0;
+    int lastWeekCount=0;
+    
+    //get the last month, current month, last week, and current week to see what the change is.
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
+    [request setEntity:entity];    
+    
+    NSDate *now = [NSDate date];
+	NSDateComponents *dc = [[NSDateComponents alloc] init];
+	[dc setDay:-7];
+	NSDate *oneWeekAgo = [[NSCalendar currentCalendar] dateByAddingComponents:dc toDate:now options:0];
+  
+    NSPredicate *datePredicate = [NSPredicate predicateWithFormat:@"checkin > %@ or checkout > %@ ",oneWeekAgo,oneWeekAgo];
+    
+    [request setPredicate:datePredicate];
+        
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) 
+    {
+        NSLog(@"Failed to get checkin objects.");
+    }
+    else 
+    {
+        thisWeekCount = [mutableFetchResults count];
+        NSLog(@"Last week has %d checkins",[mutableFetchResults count]);
+        [weekSpend setText: [NSString stringWithFormat:@"£%1.2f", [self sumSpend:mutableFetchResults]]];
+
+    }
+    
+    
+
+    request = [[NSFetchRequest alloc] init];
+    [request setEntity:entity];    
+    
+    dc = [[NSDateComponents alloc] init];
+	[dc setDay:-14];
+	NSDate *twoWeeksAgo = [[NSCalendar currentCalendar] dateByAddingComponents:dc toDate:now options:0];
+    
+    datePredicate = [NSPredicate predicateWithFormat:@"(checkin > %@ OR checkout > %@) AND (checkin < %@ OR checkout < %@)",twoWeeksAgo,twoWeeksAgo,oneWeekAgo,oneWeekAgo];
+    
+    [request setPredicate:datePredicate];
+    
+    error = nil;
+    mutableFetchResults = [[managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResults == nil) 
+    {
+        NSLog(@"Failed to get checkin objects.");
+    }
+    else 
+    {
+        lastWeekCount = [mutableFetchResults count];
+        NSLog(@"Previous week has %d checkins",[mutableFetchResults count]);
+    }
+    
+    //Work out which of the 3 week components to display.
+    if (lastWeekCount > thisWeekCount) 
+    {
+        return @"-down.png";
+    }
+    else if (lastWeekCount < thisWeekCount)
+    {
+        return @"-up.png";
+    }
+    else 
+    {
+        return @"-same.png";
+    }
     
     //[self setJourneyHistory: mutableFetchResults];
 }
 
 - (void) didMoveToWindow
 {
+    NSLog(@"At this point, TTJourneySummaryView would like to have a manageObjectContext.");
+
+    //find out what has been happening lateley and display the correct icons (this is going to be a basted to test...)
+    movementImage = (UIImageView *)[self viewWithTag: 1];
+    NSString *directionImage = [NSString stringWithFormat:@"%@%@",[self monthChangeData],[self weekChangeData]];
+    [movementImage setImage:[UIImage imageNamed:directionImage]]; 
+    
     [self initCustom];
 }
 

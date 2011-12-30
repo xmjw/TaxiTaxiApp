@@ -226,6 +226,7 @@
     Checkin *checkin = (Checkin *)[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
     
     [checkin setPlate:plate];
+    [checkin setCheckin:when];
     [checkin setCheckout: when];
     [checkin setEndLongitude: longitude];
     [checkin setEndLatitude: latitude];

@@ -128,7 +128,7 @@
     [[cell textLabel] setText:[checkin plate]];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/mm/yyyy hh:mm"];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy HH:mm"];
     
     NSDate *when = (checkin.checkin != nil ? checkin.checkin : checkin.checkout);
     
@@ -185,6 +185,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"The user tapped on a table row %@",indexPath);
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];

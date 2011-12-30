@@ -12,10 +12,15 @@
 @interface TTJourneySummaryView : UIView <TTManagedObjectContextProtocol>
 {
     UIImageView* movementImage;
+    UILabel* monthSpend;
+    UILabel* weekSpend;
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView* movementImage;
+@property (nonatomic, retain) IBOutlet UILabel* weekSpend;
+@property (nonatomic, retain) IBOutlet UILabel* monthSpend;
 
 -(void)initCustom;
+-(float) sumSpend: (NSMutableArray *) journeys;
 
 @end

@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "TTManagedObjectContextProtocol.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface TTLiveTrackViewContorller : UIViewController <TTManagedObjectContextProtocol>
+@interface TTLiveTrackViewContorller : UIViewController <TTManagedObjectContextProtocol, CLLocationManagerDelegate>
+{
+    CLLocationManager *locationManager;
+    CLLocation *currentLocation;
 
+}
 @end
