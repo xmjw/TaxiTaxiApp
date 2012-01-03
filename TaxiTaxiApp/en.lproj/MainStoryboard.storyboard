@@ -162,7 +162,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="JxJ-cC-7j6" kind="push" id="Nuw-AC-BcS"/>
+                                    <segue destination="YyD-sh-Hge" kind="push" id="gnY-2i-fQi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -176,34 +176,28 @@
             </objects>
             <point key="canvasLocation" x="1674" y="-757"/>
         </scene>
-        <scene sceneID="9jG-Po-QiE">
+        <scene sceneID="m9G-GK-FzE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vlY-wJ-fgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="JxJ-cC-7j6" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="g8Q-1p-7Sr">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhI-AJ-QaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="YyD-sh-Hge" customClass="TTJourneyDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KxE-1K-Ye6">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Qpc-vD-swT">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="JxJ-cC-7j6" id="r4R-74-ML6"/>
-                            <outlet property="delegate" destination="JxJ-cC-7j6" id="4Mo-pr-4H5"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Details" id="pTR-v9-6qm"/>
-                </tableViewController>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Viewing a Journey" lineBreakMode="tailTruncation" minimumFontSize="10" id="l64-lI-08m">
+                                <rect key="frame" x="91" y="205" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xk4-iI-b9u"/>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="2087" y="-757"/>
+            <point key="canvasLocation" x="2138" y="-757"/>
         </scene>
         <scene sceneID="y1W-dl-zad">
             <objects>

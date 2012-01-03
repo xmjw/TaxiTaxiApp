@@ -38,6 +38,7 @@
 		7A443E82147DB6FC00068B4E /* Check-In.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A443E80147DB6FC00068B4E /* Check-In.png */; };
 		7A49772D14747510001C4317 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31E714632939005DA431 /* SenTestingKit.framework */; };
 		7A52B985147479FF002937CF /* TTJourneysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A52B984147479FF002937CF /* TTJourneysViewController.m */; };
+		7A6C60D514AE831E00BF5BCE /* TTJourneyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6C60D414AE831E00BF5BCE /* TTJourneyDetailViewController.m */; };
 		7A9203B914801C2900E34F92 /* taxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9203B814801C2900E34F92 /* taxi.png */; };
 		7A9203BB14801C2D00E34F92 /* taxi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9203BA14801C2D00E34F92 /* taxi@2x.png */; };
 		7A92173B147E72C100FD09DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A92173A147E72C100FD09DB /* MapKit.framework */; };
@@ -119,6 +120,8 @@
 		7A443E80147DB6FC00068B4E /* Check-In.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check-In.png"; sourceTree = "<group>"; };
 		7A52B983147479FF002937CF /* TTJourneysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneysViewController.h; sourceTree = "<group>"; };
 		7A52B984147479FF002937CF /* TTJourneysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneysViewController.m; sourceTree = "<group>"; };
+		7A6C60D314AE831E00BF5BCE /* TTJourneyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneyDetailViewController.h; sourceTree = "<group>"; };
+		7A6C60D414AE831E00BF5BCE /* TTJourneyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneyDetailViewController.m; sourceTree = "<group>"; };
 		7A9203B814801C2900E34F92 /* taxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taxi.png; path = ../taxi.png; sourceTree = "<group>"; };
 		7A9203BA14801C2D00E34F92 /* taxi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taxi@2x.png"; path = "../taxi@2x.png"; sourceTree = "<group>"; };
 		7A92173A147E72C100FD09DB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -302,6 +305,8 @@
 				7A443E5A147D8CF900068B4E /* TTTabBarController.m */,
 				7A96CA37148AAB3C00A325A2 /* TTLiveTrackViewContorller.h */,
 				7A96CA38148AAB3C00A325A2 /* TTLiveTrackViewContorller.m */,
+				7A6C60D314AE831E00BF5BCE /* TTJourneyDetailViewController.h */,
+				7A6C60D414AE831E00BF5BCE /* TTJourneyDetailViewController.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -520,6 +525,7 @@
 				7AE66341147AFBD300096978 /* TTJourneyHistoryViewController.m in Sources */,
 				7A443E5B147D8CF900068B4E /* TTTabBarController.m in Sources */,
 				7A96CA39148AAB3C00A325A2 /* TTLiveTrackViewContorller.m in Sources */,
+				7A6C60D514AE831E00BF5BCE /* TTJourneyDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

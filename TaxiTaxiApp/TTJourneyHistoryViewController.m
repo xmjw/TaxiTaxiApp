@@ -8,6 +8,7 @@
 
 #import "TTJourneyHistoryViewController.h"
 #import "Checkin.h"
+#import "TTJourneyDetailViewController.h"
 
 @implementation TTJourneyHistoryViewController
 
@@ -187,12 +188,15 @@
 {
     NSLog(@"The user tapped on a table row %@",indexPath);
     
+    TTJourneyDetailViewController *detailViewController = [[TTJourneyDetailViewController alloc] init];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    
+    
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
 
