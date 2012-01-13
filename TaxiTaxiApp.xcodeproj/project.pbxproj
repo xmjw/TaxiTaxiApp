@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141BFA1E14C0ECD700C40D5B /* modal-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 141BFA1C14C0ECD700C40D5B /* modal-bg.png */; };
+		141BFA1F14C0ECD700C40D5B /* modal-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 141BFA1D14C0ECD700C40D5B /* modal-bg@2x.png */; };
 		14D9900F146C263900DAE48F /* badge.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D99005146C263900DAE48F /* badge.png */; };
 		14D99010146C263900DAE48F /* badge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D99006146C263900DAE48F /* badge@2x.png */; };
 		14D99011146C263900DAE48F /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D99007146C263900DAE48F /* car.png */; };
@@ -81,6 +83,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		141BFA1C14C0ECD700C40D5B /* modal-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modal-bg.png"; sourceTree = "<group>"; };
+		141BFA1D14C0ECD700C40D5B /* modal-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "modal-bg@2x.png"; sourceTree = "<group>"; };
 		14D99005146C263900DAE48F /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge.png; sourceTree = "<group>"; };
 		14D99006146C263900DAE48F /* badge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badge@2x.png"; sourceTree = "<group>"; };
 		14D99007146C263900DAE48F /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
@@ -348,6 +352,8 @@
 		7AE59D7214635BA000CDECA9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				141BFA1C14C0ECD700C40D5B /* modal-bg.png */,
+				141BFA1D14C0ECD700C40D5B /* modal-bg@2x.png */,
 				7A96CA3B148AAC2900A325A2 /* 103-map.png */,
 				7A99B62D14804AE500314CE1 /* Spending Arrows */,
 				7A9203BA14801C2D00E34F92 /* taxi@2x.png */,
@@ -478,6 +484,8 @@
 				7A99B65014804B1A00314CE1 /* up-same@2x.png in Resources */,
 				7A99B65114804B1A00314CE1 /* up-up@2x.png in Resources */,
 				7A96CA3C148AAC2900A325A2 /* 103-map.png in Resources */,
+				141BFA1E14C0ECD700C40D5B /* modal-bg.png in Resources */,
+				141BFA1F14C0ECD700C40D5B /* modal-bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
