@@ -21,6 +21,7 @@
 		14D99018146C263A00DAE48F /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D9900E146C263900DAE48F /* user@2x.png */; };
 		14D99030146C36C800DAE48F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D9902F146C36C800DAE48F /* CoreLocation.framework */; };
 		7A13E16114635E9E00BEF171 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A13E15F14635E9E00BEF171 /* DataModel.xcdatamodeld */; };
+		7A26081214C9C91900CD2F3F /* TTLocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A26081114C9C91900CD2F3F /* TTLocationAnnotation.m */; };
 		7A2E31BF14632939005DA431 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31BE14632939005DA431 /* UIKit.framework */; };
 		7A2E31C114632939005DA431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31C014632939005DA431 /* Foundation.framework */; };
 		7A2E31C314632939005DA431 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31C214632939005DA431 /* CoreGraphics.framework */; };
@@ -38,12 +39,12 @@
 		7A443E7E147DB6C300068B4E /* Check-In@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A443E7A147DB6C300068B4E /* Check-In@2x.png */; };
 		7A443E81147DB6FC00068B4E /* Check-In-Highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A443E7F147DB6FC00068B4E /* Check-In-Highlighted.png */; };
 		7A443E82147DB6FC00068B4E /* Check-In.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A443E80147DB6FC00068B4E /* Check-In.png */; };
+		7A445E8914C635200061E6FB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A445E8814C635200061E6FB /* MapKit.framework */; };
 		7A49772D14747510001C4317 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31E714632939005DA431 /* SenTestingKit.framework */; };
 		7A52B985147479FF002937CF /* TTJourneysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A52B984147479FF002937CF /* TTJourneysViewController.m */; };
 		7A6C60D514AE831E00BF5BCE /* TTJourneyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6C60D414AE831E00BF5BCE /* TTJourneyDetailViewController.m */; };
 		7A9203B914801C2900E34F92 /* taxi.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9203B814801C2900E34F92 /* taxi.png */; };
 		7A9203BB14801C2D00E34F92 /* taxi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9203BA14801C2D00E34F92 /* taxi@2x.png */; };
-		7A92173B147E72C100FD09DB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A92173A147E72C100FD09DB /* MapKit.framework */; };
 		7A93B1801478198100B10643 /* TTJourneySummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A93B17F1478198100B10643 /* TTJourneySummaryView.m */; };
 		7A96CA39148AAB3C00A325A2 /* TTLiveTrackViewContorller.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A96CA38148AAB3C00A325A2 /* TTLiveTrackViewContorller.m */; };
 		7A96CA3C148AAC2900A325A2 /* 103-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A96CA3B148AAC2900A325A2 /* 103-map.png */; };
@@ -97,6 +98,8 @@
 		14D9900E146C263900DAE48F /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		14D9902F146C36C800DAE48F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7A13E16014635E9E00BEF171 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		7A26081014C9C91900CD2F3F /* TTLocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLocationAnnotation.h; sourceTree = "<group>"; };
+		7A26081114C9C91900CD2F3F /* TTLocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLocationAnnotation.m; sourceTree = "<group>"; };
 		7A2E31BA14632939005DA431 /* Taxi Taxi!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taxi Taxi!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E31BE14632939005DA431 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A2E31C014632939005DA431 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,13 +125,13 @@
 		7A443E7A147DB6C300068B4E /* Check-In@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check-In@2x.png"; sourceTree = "<group>"; };
 		7A443E7F147DB6FC00068B4E /* Check-In-Highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check-In-Highlighted.png"; sourceTree = "<group>"; };
 		7A443E80147DB6FC00068B4E /* Check-In.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check-In.png"; sourceTree = "<group>"; };
+		7A445E8814C635200061E6FB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7A52B983147479FF002937CF /* TTJourneysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneysViewController.h; sourceTree = "<group>"; };
 		7A52B984147479FF002937CF /* TTJourneysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneysViewController.m; sourceTree = "<group>"; };
 		7A6C60D314AE831E00BF5BCE /* TTJourneyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneyDetailViewController.h; sourceTree = "<group>"; };
 		7A6C60D414AE831E00BF5BCE /* TTJourneyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneyDetailViewController.m; sourceTree = "<group>"; };
 		7A9203B814801C2900E34F92 /* taxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taxi.png; path = ../taxi.png; sourceTree = "<group>"; };
 		7A9203BA14801C2D00E34F92 /* taxi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "taxi@2x.png"; path = "../taxi@2x.png"; sourceTree = "<group>"; };
-		7A92173A147E72C100FD09DB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7A93B17E1478198100B10643 /* TTJourneySummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTJourneySummaryView.h; sourceTree = "<group>"; };
 		7A93B17F1478198100B10643 /* TTJourneySummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTJourneySummaryView.m; sourceTree = "<group>"; };
 		7A93B181147819F900B10643 /* TTManagedObjectContextProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTManagedObjectContextProtocol.h; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A445E8914C635200061E6FB /* MapKit.framework in Frameworks */,
 				7A49772D14747510001C4317 /* SenTestingKit.framework in Frameworks */,
 				14D99030146C36C800DAE48F /* CoreLocation.framework in Frameworks */,
 				7AB0BC2F146DC244008F810E /* CoreData.framework in Frameworks */,
@@ -180,7 +184,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A92173B147E72C100FD09DB /* MapKit.framework in Frameworks */,
 				7A2E31E914632939005DA431 /* UIKit.framework in Frameworks */,
 				7A2E31EA14632939005DA431 /* Foundation.framework in Frameworks */,
 			);
@@ -211,7 +214,7 @@
 		7A2E31BD14632939005DA431 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7A92173A147E72C100FD09DB /* MapKit.framework */,
+				7A445E8814C635200061E6FB /* MapKit.framework */,
 				14D9902F146C36C800DAE48F /* CoreLocation.framework */,
 				7AB0BC2E146DC244008F810E /* CoreData.framework */,
 				7A2E31BE14632939005DA431 /* UIKit.framework */,
@@ -311,6 +314,8 @@
 				7A96CA38148AAB3C00A325A2 /* TTLiveTrackViewContorller.m */,
 				7A6C60D314AE831E00BF5BCE /* TTJourneyDetailViewController.h */,
 				7A6C60D414AE831E00BF5BCE /* TTJourneyDetailViewController.m */,
+				7A26081014C9C91900CD2F3F /* TTLocationAnnotation.h */,
+				7A26081114C9C91900CD2F3F /* TTLocationAnnotation.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 				7A443E5B147D8CF900068B4E /* TTTabBarController.m in Sources */,
 				7A96CA39148AAB3C00A325A2 /* TTLiveTrackViewContorller.m in Sources */,
 				7A6C60D514AE831E00BF5BCE /* TTJourneyDetailViewController.m in Sources */,
+				7A26081214C9C91900CD2F3F /* TTLocationAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 #import "Checkin.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface TTCheckOutViewController : UIViewController <CLLocationManagerDelegate, TTManagedObjectContextProtocol>
+@interface TTCheckOutViewController : UIViewController <CLLocationManagerDelegate, TTManagedObjectContextProtocol, UITextFieldDelegate>
 {
     CLLocationManager *locationManager;
     CLLocation *currentLocation;

@@ -11,7 +11,7 @@
 #import "TTManagedObjectContextProtocol.h"
 #import <MapKit/MapKit.h>
 
-@interface TTCheckinViewController  : UIViewController <TTManagedObjectContextProtocol, CLLocationManagerDelegate, MKMapViewDelegate>
+@interface TTCheckinViewController  : UIViewController <TTManagedObjectContextProtocol, CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate>
 {
     CLLocationManager *locationManager;
     CLLocation *currentLocation;
@@ -32,8 +32,8 @@
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
-- (IBAction) keyboardDisplayed: (id) sender;
-- (IBAction) keyboardHidden: (id) sender;
+- (IBAction) keyboardDisplayed:(NSNotification *)inNotification;
+- (IBAction) keyboardHidden:(NSNotification *)inNotification;
 - (IBAction) checkin:(id)sender;
 - (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude;
 

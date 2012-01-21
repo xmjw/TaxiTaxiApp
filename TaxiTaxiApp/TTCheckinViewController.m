@@ -36,6 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"[TTCheckinViewController viewDidLoad]");
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -124,6 +125,12 @@
     locationManager = nil;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"TTCheckinViewController textFieldShouldReturn");
+    [textField resignFirstResponder];
+    return YES;
+}
 
 - (void) dealloc
 {
@@ -131,7 +138,7 @@
 }
 
 
-- (IBAction) keyboardDisplayed: (id) sender
+- (IBAction) keyboardDisplayed:(NSNotification *)inNotification
 {
     
     float x = 0;
@@ -152,7 +159,7 @@
     
 }
 
-- (IBAction) keyboardHidden: (id) sender
+- (IBAction) keyboardHidden:(NSNotification *)inNotification
 {
     NSLog(@"Keyboard is down again.");
 }
@@ -169,7 +176,7 @@
     [plateNumberTextView resignFirstResponder];
 }
 
-- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude
+- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSNumber *)longitude withLatitude:(NSNumber *)latitude
 {
     
 // Fields from Checkin entity object

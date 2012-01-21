@@ -14,10 +14,10 @@
 
 @property (nonatomic, retain) NSNumber * expense;
 @property (nonatomic, retain) NSNumber * gpsAccuracy;
-@property (nonatomic, retain) NSString * startLatitude;
-@property (nonatomic, retain) NSString * startLongitude;
-@property (nonatomic, retain) NSString * endLatitude;
-@property (nonatomic, retain) NSString * endLongitude;
+@property (nonatomic, retain) NSNumber * startLatitude;
+@property (nonatomic, retain) NSNumber * startLongitude;
+@property (nonatomic, retain) NSNumber * endLatitude;
+@property (nonatomic, retain) NSNumber * endLongitude;
 @property (nonatomic, retain) NSString * plate;
 @property (nonatomic, retain) NSNumber * price;
 @property (nonatomic, retain) NSNumber * remoteId;

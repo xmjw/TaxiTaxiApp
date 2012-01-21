@@ -8,7 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "TTManagedObjectContextProtocol.h"
+#import <MapKit/MapKit.h>
+#import "Checkin.h"
 
-@interface TTJourneyDetailViewController : UIViewController <TTManagedObjectContextProtocol>
+@interface TTJourneyDetailViewController : UIViewController <TTManagedObjectContextProtocol, MKMapViewDelegate>
+{
+    MKMapView* mapView;
+    UITextField* price;
+    UITextField* plate;
+    UILabel *dateDetails;
+}
+
+@property (nonatomic, retain) IBOutlet MKMapView* mapView; 
+@property (nonatomic, retain) Checkin* checkin;
+@property (nonatomic, retain) IBOutlet UITextField* price;
+@property (nonatomic, retain) IBOutlet UITextField* plate;
+@property (nonatomic, retain) IBOutlet UILabel* dateDetails;
+
+-(void) addLocationsToMap;
 
 @end

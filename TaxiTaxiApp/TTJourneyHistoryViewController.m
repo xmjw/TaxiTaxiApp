@@ -188,7 +188,12 @@
 {
     NSLog(@"The user tapped on a table row %@",indexPath);
     
-    TTJourneyDetailViewController *detailViewController = [[TTJourneyDetailViewController alloc] init];
+    //TTJourneyDetailViewController *detailViewController = [[TTJourneyDetailViewController alloc] init];
+    TTJourneyDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"JourneyDetailView"];
+    
+    Checkin* checkin = (Checkin *)[journeyHistory objectAtIndex:[indexPath row]];
+    [detailViewController setCheckin:checkin];
+    
     [self.navigationController pushViewController:detailViewController animated:YES];
     
     

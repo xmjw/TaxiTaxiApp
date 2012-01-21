@@ -65,8 +65,8 @@
     if (checkin != nil && [[checkin wasEnd] intValue] == 0)
     {
         NSLog(@"Continuation Route...");
-        [startLatitude setText: checkin.startLatitude];
-        [startLongitude setText: checkin.startLongitude];
+        [startLatitude setText: [NSString stringWithFormat: @"%f" ,checkin.startLatitude]];
+        [startLongitude setText: [NSString stringWithFormat: @"%f" ,checkin.startLongitude]];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm"];
@@ -176,14 +176,14 @@
     NSLog(@"Keyboard is up. Scroll View is x=%f y=%f",x,y);
     [scrollView setContentSize:CGSizeMake(320, 330)];
     
-    [scrollView setFrame:CGRectMake(0, 0, 320, 250)];
+    [scrollView setFrame:CGRectMake(0, 40, 320, 250)];
 }
 
 - (IBAction) keyboardHidden: (id) sender
 {
     NSLog(@"Keyboard is down again.");
     [scrollView setContentSize:CGSizeMake(320, 330)];
-    [scrollView setFrame:CGRectMake(0, 0, 320, 330)];
+    [scrollView setFrame:CGRectMake(0, 40, 320, 330)];
 }
 
 #pragma Checkin actions...
@@ -221,7 +221,7 @@
     
 }
 
-- (BOOL) createCheckoutWithPlate:(NSString*)plate onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)priceOfJourney
+- (BOOL) createCheckoutWithPlate:(NSString*)plate onDate:(NSDate *)when withLongitude:(NSNumber *)longitude withLatitude:(NSNumber *)latitude withPrice:(NSNumber *)priceOfJourney
 {
     Checkin *checkin = (Checkin *)[NSEntityDescription insertNewObjectForEntityForName:@"Checkin" inManagedObjectContext:managedObjectContext];
     
@@ -243,7 +243,7 @@
     NSLog(@"Created new checkin and commited to managedObjectContext");
     return YES;}
 
-- (BOOL) createCheckoutFromCheckin:(Checkin*)checkin onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withPrice:(NSNumber *)priceOfJourney
+- (BOOL) createCheckoutFromCheckin:(Checkin*)checkin onDate:(NSDate *)when withLongitude:(NSNumber *)longitude withLatitude:(NSNumber *)latitude withPrice:(NSNumber *)priceOfJourney
 {
     [checkin setCheckout: when];
     [checkin setEndLongitude: longitude];
@@ -289,4 +289,10 @@
     return nil;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"TTCheckoutViewController textFieldShouldReturn");
+    [textField resignFirstResponder];
+    return YES;
+}
 @end
