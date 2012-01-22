@@ -14,13 +14,10 @@
 @synthesize managedObjectContext;
 @synthesize plateNumber;
 @synthesize price;
-@synthesize startLatitude;
-@synthesize startLongitude;
-@synthesize endLatitude;
-@synthesize endLongitude;
 @synthesize concludesJourney; 
 @synthesize scrollView;
 @synthesize startCheckinTime;
+@synthesize mapView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,13 +45,15 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    [scrollView setContentSize:CGSizeMake(320, 500)];
     [super viewDidLoad];
+
 }
-*/
+
 
 -(void) loadData
 {
@@ -65,8 +64,6 @@
     if (checkin != nil && [[checkin wasEnd] intValue] == 0)
     {
         NSLog(@"Continuation Route...");
-        [startLatitude setText: [NSString stringWithFormat: @"%f" ,checkin.startLatitude]];
-        [startLongitude setText: [NSString stringWithFormat: @"%f" ,checkin.startLongitude]];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"HH:mm"];
@@ -77,8 +74,6 @@
         [concludesJourney setOn:YES];
         [concludesJourney setEnabled:YES];
         
-        [endLatitude setText:@""];
-        [endLongitude setText:@""];
         [plateNumber setText: checkin.plate];
     }
     else 
@@ -112,6 +107,15 @@
     
     // Tell our manager to start looking for its location immediately
     [locationManager startUpdatingLocation];
+    
+    mapView.showsUserLocation=YES;
+    mapView.userTrackingMode = MKUserTrackingModeFollow;
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    mapView.userTrackingMode = MKUserTrackingModeNone;
 }
 
 - (void)viewDidUnload
@@ -140,13 +144,18 @@
     [locationManager stopUpdatingLocation];
     locationManager = nil;
     
-    NSString *lat = [NSString stringWithFormat:@"%1.8f", 
-                     newLocation.coordinate.latitude];
-    [endLatitude setText:lat];
+    //setup location on the map.
+    MKCoordinateRegion region;
     
-    NSString *longt = [NSString stringWithFormat:@"%1.8f", 
-                       newLocation.coordinate.longitude];
-    [endLongitude setText:longt];
+    CLLocationDistance latitudinalMeters = 750;
+    CLLocationDistance longitudinalMeters = 1500;
+    
+    region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, latitudinalMeters, longitudinalMeters);
+    
+    NSLog(@"Location : Latitude %f Longitude %f",newLocation.coordinate.latitude,newLocation.coordinate.longitude);
+    
+    //region.span=span;
+    [mapView setRegion:region animated:TRUE];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -174,16 +183,16 @@
     y = size.height;
     
     NSLog(@"Keyboard is up. Scroll View is x=%f y=%f",x,y);
-    [scrollView setContentSize:CGSizeMake(320, 330)];
+    //[scrollView setContentSize:CGSizeMake(320, 500)];
     
-    [scrollView setFrame:CGRectMake(0, 40, 320, 250)];
+    [scrollView setFrame:CGRectMake(0, 45, 320, 250)];
 }
 
 - (IBAction) keyboardHidden: (id) sender
 {
     NSLog(@"Keyboard is down again.");
-    [scrollView setContentSize:CGSizeMake(320, 330)];
-    [scrollView setFrame:CGRectMake(0, 40, 320, 330)];
+
+    [scrollView setFrame:CGRectMake(0, 45, 320, 430)];
 }
 
 #pragma Checkin actions...
@@ -205,14 +214,14 @@
     {
         //conclude the previous journey...
         Checkin *checkin = [self getLastCheckin];
-        if ([self createCheckoutFromCheckin:checkin onDate:[NSDate date] withLongitude: endLongitude.text withLatitude:endLatitude.text withPrice: priceOfJourney])
+        if ([self createCheckoutFromCheckin:checkin onDate:[NSDate date] withLongitude: [NSNumber numberWithDouble: mapView.region.center.longitude] withLatitude:[NSNumber numberWithDouble: mapView.region.center.latitude] withPrice: priceOfJourney])
             NSLog(@"Created a Checkin from existing plate with %@",checkin.plate);
         else NSLog(@"Failed to create checkout! Panic.");
     }
     else
     {
         //don't conclude the previous journey, this is a new one.
-        if ([self createCheckoutWithPlate: plateNumber.text onDate: [NSDate date] withLongitude:endLongitude.text withLatitude:endLatitude.text withPrice:priceOfJourney])
+        if ([self createCheckoutWithPlate: plateNumber.text onDate: [NSDate date] withLongitude:[NSNumber numberWithDouble: mapView.region.center.longitude] withLatitude:[NSNumber numberWithDouble: mapView.region.center.latitude] withPrice:priceOfJourney])
             NSLog(@"Create a Checking for a new plate with %@",plateNumber.text);
         else NSLog(@"Failed to create checkout! Panic.");
     }

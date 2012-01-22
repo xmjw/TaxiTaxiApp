@@ -15,11 +15,8 @@
 {
     CLLocationManager *locationManager;
     CLLocation *currentLocation;
-    
-    IBOutlet UILabel *latitudeLabel;
-    IBOutlet UILabel *longitudeLabel;
+
     IBOutlet UITextField *plateNumberTextView;
-    IBOutlet MKMapView *mapView;
     
     UIButton *checkinButton;
     
@@ -35,6 +32,6 @@
 - (IBAction) keyboardDisplayed:(NSNotification *)inNotification;
 - (IBAction) keyboardHidden:(NSNotification *)inNotification;
 - (IBAction) checkin:(id)sender;
-- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude;
+- (BOOL) createCheckinWithPlate:(NSString*)plateNumber onDate:(NSDate *)when withLongitude:(NSNumber *)longitude withLatitude:(NSNumber *)latitude;
 
 @end

@@ -22,6 +22,8 @@
 		14D99030146C36C800DAE48F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D9902F146C36C800DAE48F /* CoreLocation.framework */; };
 		7A13E16114635E9E00BEF171 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A13E15F14635E9E00BEF171 /* DataModel.xcdatamodeld */; };
 		7A26081214C9C91900CD2F3F /* TTLocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A26081114C9C91900CD2F3F /* TTLocationAnnotation.m */; };
+		7A26081914CB122100CD2F3F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A26081814CB122100CD2F3F /* Default.png */; };
+		7A26081B14CB122600CD2F3F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A26081A14CB122600CD2F3F /* Default@2x.png */; };
 		7A2E31BF14632939005DA431 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31BE14632939005DA431 /* UIKit.framework */; };
 		7A2E31C114632939005DA431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31C014632939005DA431 /* Foundation.framework */; };
 		7A2E31C314632939005DA431 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2E31C214632939005DA431 /* CoreGraphics.framework */; };
@@ -100,6 +102,8 @@
 		7A13E16014635E9E00BEF171 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		7A26081014C9C91900CD2F3F /* TTLocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLocationAnnotation.h; sourceTree = "<group>"; };
 		7A26081114C9C91900CD2F3F /* TTLocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLocationAnnotation.m; sourceTree = "<group>"; };
+		7A26081814CB122100CD2F3F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		7A26081A14CB122600CD2F3F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7A2E31BA14632939005DA431 /* Taxi Taxi!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taxi Taxi!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2E31BE14632939005DA431 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7A2E31C014632939005DA431 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -195,6 +199,8 @@
 		7A2E31AF14632938005DA431 = {
 			isa = PBXGroup;
 			children = (
+				7A26081A14CB122600CD2F3F /* Default@2x.png */,
+				7A26081814CB122100CD2F3F /* Default.png */,
 				7A2E31C414632939005DA431 /* TaxiTaxiApp */,
 				7A2E31ED14632939005DA431 /* TaxiTaxiAppTests */,
 				7A2E31BD14632939005DA431 /* Frameworks */,
@@ -491,6 +497,8 @@
 				7A96CA3C148AAC2900A325A2 /* 103-map.png in Resources */,
 				141BFA1E14C0ECD700C40D5B /* modal-bg.png in Resources */,
 				141BFA1F14C0ECD700C40D5B /* modal-bg@2x.png in Resources */,
+				7A26081914CB122100CD2F3F /* Default.png in Resources */,
+				7A26081B14CB122600CD2F3F /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

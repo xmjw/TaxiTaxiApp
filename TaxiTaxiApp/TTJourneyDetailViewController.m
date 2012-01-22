@@ -115,6 +115,8 @@
     //If there was as start, we add that pin
     if ([[self checkin] wasStart])
     {
+        NSLog(@"Started at Lat/Long %f/%f",[[[self checkin] startLatitude] doubleValue],[[[self checkin] startLongitude] doubleValue]);
+        
         CLLocationCoordinate2D startPin;
         startPin.latitude =  [[[self checkin] startLatitude] doubleValue];
         startPin.longitude = [[[self checkin] startLongitude] doubleValue];
@@ -127,6 +129,8 @@
     //If there was an end, we add that pin too
     if ([[self checkin] wasEnd] )
     {
+        NSLog(@"Ended at Lat/Long %f/%f",[[[self checkin] endLatitude] doubleValue],[[[self checkin] endLongitude] doubleValue]);
+
         CLLocationCoordinate2D endPin;
         endPin.latitude = [[[self checkin] endLatitude] doubleValue];
         endPin.longitude = [[[self checkin] endLongitude]doubleValue];

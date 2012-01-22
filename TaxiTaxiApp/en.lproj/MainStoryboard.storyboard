@@ -28,42 +28,42 @@
                                 <rect key="frame" x="20" y="332" width="62" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weekly" lineBreakMode="tailTruncation" minimumFontSize="10" id="UWH-38-Zk0">
                                 <rect key="frame" x="105" y="332" width="56" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="£132" lineBreakMode="tailTruncation" minimumFontSize="32" id="GvR-LH-xyD">
                                 <rect key="frame" x="169" y="197" width="131" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="£24" lineBreakMode="tailTruncation" minimumFontSize="32" id="lWp-Ur-X9S">
                                 <rect key="frame" x="169" y="261" width="131" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Weekly" lineBreakMode="tailTruncation" minimumFontSize="10" id="T8s-AL-txK">
                                 <rect key="frame" x="169" y="287" width="48" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Monthly" lineBreakMode="tailTruncation" minimumFontSize="6" id="pXc-9V-b1C">
                                 <rect key="frame" x="169" y="228" width="48" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -279,8 +279,8 @@
                                     <navigationItem title="Checkout" id="sSk-8u-9bX"/>
                                 </items>
                             </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" bounces="NO" showsHorizontalScrollIndicator="NO" id="9Dc-Lc-awJ">
-                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" bounces="NO" showsHorizontalScrollIndicator="NO" id="9Dc-Lc-awJ">
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Plate or Registration Number" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="gOt-Ir-KEc">
@@ -347,6 +347,13 @@
                                             <action selector="checkout:" destination="DDe-hg-hzY" eventType="touchUpInside" id="gYI-od-IHw"/>
                                         </connections>
                                     </button>
+                                    <mapView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="UXf-BF-ye3">
+                                        <rect key="frame" x="20" y="271" width="280" height="153"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="KXr-LZ-qOY" id="Osk-qp-xTe"/>
+                                        </connections>
+                                    </mapView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -356,6 +363,7 @@
                     <navigationItem key="navigationItem" id="sSK-it-RW6"/>
                     <connections>
                         <outlet property="concludesJourney" destination="yQj-D1-qEK" id="qmD-u4-hjh"/>
+                        <outlet property="mapView" destination="UXf-BF-ye3" id="JJw-od-OA4"/>
                         <outlet property="plateNumber" destination="4oe-gv-Vc8" id="sBX-nL-7ph"/>
                         <outlet property="price" destination="6ad-gC-8AQ" id="Xn5-Re-Mnl"/>
                         <outlet property="scrollView" destination="9Dc-Lc-awJ" id="SOs-cn-crF"/>
@@ -384,11 +392,11 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="hNk-ku-9pv">
+                            <mapView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="hNk-ku-9pv">
                                 <rect key="frame" x="20" y="238" width="280" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="YyD-sh-Hge" id="e84-oe-ez0"/>
+                                    <outlet property="delegate" destination="3" id="34b-Ji-b9f"/>
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pPV-Ye-fyE">
@@ -429,6 +437,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Check-In" image="pushpin-1.png" id="6"/>
                     <connections>
+                        <outlet property="mapView" destination="hNk-ku-9pv" id="qXD-a3-qHx"/>
                         <outlet property="plateNumberTextView" destination="6du-xK-8io" id="OG4-YQ-EZc"/>
                     </connections>
                 </viewController>
@@ -534,6 +543,66 @@
         <image name="same-same.png" width="140" height="140"/>
         <image name="user.png" width="19" height="24"/>
     </resources>
+    <classes>
+        <class className="TTCheckOutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTCheckOutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="checkout:"/>
+                <relationship kind="action" name="keyboardDisplayed:"/>
+                <relationship kind="action" name="keyboardHidden:"/>
+                <relationship kind="outlet" name="concludesJourney" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="plateNumber" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="price" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="startCheckinTime" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TTCheckinViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTCheckinViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="checkin:"/>
+                <relationship kind="action" name="keyboardDisplayed:" candidateClass="NSNotification"/>
+                <relationship kind="action" name="keyboardHidden:" candidateClass="NSNotification"/>
+                <relationship kind="outlet" name="checkinButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="plateNumberTextView" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="TTFriendsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTFriendsViewController.h"/>
+        </class>
+        <class className="TTJourneyDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneyDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dateDetails" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="plate" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="price" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="TTJourneyHistoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneyHistoryViewController.h"/>
+        </class>
+        <class className="TTJourneySummaryView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneySummaryView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="monthSpend" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="movementImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="weekSpend" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TTJourneysViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTJourneysViewController.h"/>
+        </class>
+        <class className="TTLiveTrackViewContorller" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTLiveTrackViewContorller.h"/>
+        </class>
+        <class className="TTTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTTabBarController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

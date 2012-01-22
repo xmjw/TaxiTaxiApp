@@ -148,7 +148,7 @@
         
         
         //Use the below and a button callback to allow it to function...
-        tabBarController.selectedIndex = 2;
+        tabBarController.selectedIndex = 1;
         
         NSLog(@"Added button to middle...");
     }

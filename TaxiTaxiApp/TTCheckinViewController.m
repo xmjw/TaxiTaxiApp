@@ -26,17 +26,13 @@
 
 #pragma mark - MapKit View
 
-- (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated
-{
-    
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     NSLog(@"[TTCheckinViewController viewDidLoad]");
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -50,9 +46,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [latitudeLabel setText:@""];
-    [longitudeLabel setText:@""];
     
     // Create location manager object
     if (locationManager == nil)
@@ -70,16 +63,22 @@
     
     // Tell our manager to start looking for its location immediately
     [locationManager startUpdatingLocation];
+    
+    mapView.showsUserLocation=YES;
+    mapView.userTrackingMode = MKUserTrackingModeFollow;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
+    mapView.userTrackingMode = MKUserTrackingModeNone;
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -106,14 +105,22 @@
     
     [locationManager stopUpdatingLocation];
     locationManager = nil;
+
+    //setup location on the map.
+    MKCoordinateRegion region;
+
+    CLLocationDistance latitudinalMeters = 750;
+    CLLocationDistance longitudinalMeters = 1500;
     
-    NSString *lat = [NSString stringWithFormat:@"%1.8f", 
-                     newLocation.coordinate.latitude];
-    [latitudeLabel setText:lat];
     
-    NSString *longt = [NSString stringWithFormat:@"%1.8f", 
-                       newLocation.coordinate.longitude];
-    [longitudeLabel setText:longt];
+    region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, latitudinalMeters, longitudinalMeters);
+    
+    NSLog(@"Location : Latitude %f Longitude %f",newLocation.coordinate.latitude,newLocation.coordinate.longitude);
+    
+    //region.span=span;
+    [mapView setRegion:region animated:TRUE];
+
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -167,7 +174,7 @@
 
 - (IBAction) checkin:(id)sender
 {
-    if ([self createCheckinWithPlate:[plateNumberTextView text] onDate:[NSDate date] withLongitude:[longitudeLabel text] withLatitude:[latitudeLabel text]])
+    if ([self createCheckinWithPlate:[plateNumberTextView text] onDate:[NSDate date] withLongitude:[NSNumber numberWithDouble:mapView.region.center.longitude] withLatitude:[NSNumber numberWithDouble:mapView.region.center.latitude]])
     {
         NSLog(@"Wrote a checkin to the database");
     }
