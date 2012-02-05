@@ -20,7 +20,10 @@
 @property (nonatomic, retain) IBOutlet UILabel* weekSpend;
 @property (nonatomic, retain) IBOutlet UILabel* monthSpend;
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
-@property (nonatomic, retail) 
+@property (nonatomic, retain) IBOutlet UIView* panningMapView; 
+@property (nonatomic, retain) IBOutlet UIView* panningCheckinView; 
+@property (nonatomic, retain) IBOutlet UIView* panningCheckoutView; 
+
 
 -(void)initCustom;
 -(float) sumSpend: (NSMutableArray *) journeys;

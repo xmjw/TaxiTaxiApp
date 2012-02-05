@@ -16,6 +16,9 @@
 @synthesize weekSpend;
 @synthesize monthSpend;
 @synthesize scrollView;
+@synthesize panningMapView;
+@synthesize panningCheckinView;
+@synthesize panningCheckoutView;
 
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
