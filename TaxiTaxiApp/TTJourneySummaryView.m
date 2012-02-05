@@ -15,6 +15,21 @@
 @synthesize movementImage;
 @synthesize weekSpend;
 @synthesize monthSpend;
+@synthesize scrollView;
+
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    NSLog(@"viewForZoomingInScrollView was called and returned a nil view");
+    return nil;    
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
+{
+    NSLog(@"scrollViewDidEndZooming was called and has nothing to do");
+
+}
+
 
 -(void)initCustom
 {
@@ -214,6 +229,9 @@
     if (self) {
         [self initCustom];
     }
+    
+    NSLog(@"TTJourneySummaryView init");
+    
     return self;
 }
 
@@ -223,6 +241,7 @@
     if (self) {
         [self initCustom];
     }
+    NSLog(@"TTJourneySummaryView initWithCoder");
     return self;
 }
 
@@ -232,6 +251,7 @@
     if (self) {
         [self initCustom];
     }
+    NSLog(@"TTJourneySummaryView initWithFrame");
     return self;
 }
 

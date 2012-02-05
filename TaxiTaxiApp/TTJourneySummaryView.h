@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TTManagedObjectContextProtocol.h"
 
-@interface TTJourneySummaryView : UIView <TTManagedObjectContextProtocol>
+@interface TTJourneySummaryView : UIView <TTManagedObjectContextProtocol, UIScrollViewDelegate>
 {
     UIImageView* movementImage;
     UILabel* monthSpend;
@@ -19,6 +19,8 @@
 @property (nonatomic, retain) IBOutlet UIImageView* movementImage;
 @property (nonatomic, retain) IBOutlet UILabel* weekSpend;
 @property (nonatomic, retain) IBOutlet UILabel* monthSpend;
+@property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
+@property (nonatomic, retail) 
 
 -(void)initCustom;
 -(float) sumSpend: (NSMutableArray *) journeys;
