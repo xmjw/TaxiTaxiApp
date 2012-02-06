@@ -70,13 +70,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="MAP VIEW HERE" lineBreakMode="tailTruncation" minimumFontSize="10" id="OMr-Rl-PCF">
-                                                <rect key="frame" x="117" y="79" width="87" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" id="c4W-A3-tAq">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </mapView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
