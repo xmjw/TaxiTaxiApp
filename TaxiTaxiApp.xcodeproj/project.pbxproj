@@ -68,6 +68,7 @@
 		7A99B64F14804B1A00314CE1 /* up-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A99B64614804B1A00314CE1 /* up-down@2x.png */; };
 		7A99B65014804B1A00314CE1 /* up-same@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A99B64714804B1A00314CE1 /* up-same@2x.png */; };
 		7A99B65114804B1A00314CE1 /* up-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A99B64814804B1A00314CE1 /* up-up@2x.png */; };
+		7AA24FFE14E0827F0078850A /* PageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA24FFD14E0827F0078850A /* PageControl.m */; };
 		7AB0BC2F146DC244008F810E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB0BC2E146DC244008F810E /* CoreData.framework */; };
 		7AB0BC32146DCDF6008F810E /* Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0BC31146DCDF6008F810E /* Checkin.m */; };
 		7AE59D651463555A00CDECA9 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -160,6 +161,8 @@
 		7A99B64614804B1A00314CE1 /* up-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-down@2x.png"; sourceTree = "<group>"; };
 		7A99B64714804B1A00314CE1 /* up-same@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-same@2x.png"; sourceTree = "<group>"; };
 		7A99B64814804B1A00314CE1 /* up-up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-up@2x.png"; sourceTree = "<group>"; };
+		7AA24FFC14E0827F0078850A /* PageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageControl.h; sourceTree = "<group>"; };
+		7AA24FFD14E0827F0078850A /* PageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageControl.m; sourceTree = "<group>"; };
 		7AB0BC2E146DC244008F810E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7AB0BC30146DCDF6008F810E /* Checkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checkin.h; sourceTree = "<group>"; };
 		7AB0BC31146DCDF6008F810E /* Checkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checkin.m; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 				7A6C60D414AE831E00BF5BCE /* TTJourneyDetailViewController.m */,
 				7A26081014C9C91900CD2F3F /* TTLocationAnnotation.h */,
 				7A26081114C9C91900CD2F3F /* TTLocationAnnotation.m */,
+				7AA24FFC14E0827F0078850A /* PageControl.h */,
+				7AA24FFD14E0827F0078850A /* PageControl.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -548,6 +553,7 @@
 				7A96CA39148AAB3C00A325A2 /* TTLiveTrackViewContorller.m in Sources */,
 				7A6C60D514AE831E00BF5BCE /* TTJourneyDetailViewController.m in Sources */,
 				7A26081214C9C91900CD2F3F /* TTLocationAnnotation.m in Sources */,
+				7AA24FFE14E0827F0078850A /* PageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

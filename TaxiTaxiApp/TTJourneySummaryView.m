@@ -19,6 +19,7 @@
 @synthesize panningMapView;
 @synthesize panningCheckinView;
 @synthesize panningCheckoutView;
+@synthesize scrollPaginator;
 
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
@@ -33,6 +34,22 @@
 
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scroller
+{
+    //Paginates using the custom paginator from stackoverflow...     
+    if (scroller.contentOffset.x == 0)
+    {
+        [scrollPaginator setCurrentPage:0];
+    }
+    else if (scroller.contentOffset.x == 320)
+    {
+        [scrollPaginator setCurrentPage:1];
+    }
+    else if (scroller.contentOffset.x == 640)
+    {
+        [scrollPaginator setCurrentPage:2];
+    }
+}
 
 -(void)initCustom
 {
@@ -48,6 +65,18 @@
     {
         NSLog(@"Found a %@",views);
     }
+    
+    
+    [scrollView setContentSize: CGSizeMake(960,180)];
+    [scrollView setContentOffset:CGPointMake(320, 0)];
+    
+    CGRect f = CGRectMake(0, 160, 320, 20); 
+    scrollPaginator = [[PageControl alloc] initWithFrame:f];
+    scrollPaginator.numberOfPages = 3;
+    scrollPaginator.currentPage = 1;
+    scrollPaginator.pcdelegate = self;
+    [self addSubview:scrollPaginator];
+    
 }
 
 

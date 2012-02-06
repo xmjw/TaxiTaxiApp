@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "TTManagedObjectContextProtocol.h"
+#import "PageControl.h"
 
-@interface TTJourneySummaryView : UIView <TTManagedObjectContextProtocol, UIScrollViewDelegate>
+@interface TTJourneySummaryView : UIView <TTManagedObjectContextProtocol, UIScrollViewDelegate, PageControlDelegate>
 {
     UIImageView* movementImage;
     UILabel* monthSpend;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) IBOutlet UIView* panningMapView; 
 @property (nonatomic, retain) IBOutlet UIView* panningCheckinView; 
 @property (nonatomic, retain) IBOutlet UIView* panningCheckoutView; 
+@property (nonatomic, retain) IBOutlet PageControl* scrollPaginator;
 
 
 -(void)initCustom;
