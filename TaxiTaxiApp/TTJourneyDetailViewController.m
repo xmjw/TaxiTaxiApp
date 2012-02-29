@@ -112,8 +112,10 @@
 {
     NSMutableArray* annotations=[[NSMutableArray alloc] init];
     
+    NSLog(@"Started addLocationsToMap ... %@ %@ ",[[self checkin] wasStart],[[self checkin] wasEnd]);
+    
     //If there was as start, we add that pin
-    if ([[self checkin] wasStart])
+    if ([[self checkin] wasStart] == [NSNumber numberWithInt:1])
     {
         NSLog(@"Started at Lat/Long %f/%f",[[[self checkin] startLatitude] doubleValue],[[[self checkin] startLongitude] doubleValue]);
         
@@ -127,7 +129,7 @@
     }
 
     //If there was an end, we add that pin too
-    if ([[self checkin] wasEnd] )
+    if ([[self checkin] wasEnd] == [NSNumber numberWithInt:1])
     {
         NSLog(@"Ended at Lat/Long %f/%f",[[[self checkin] endLatitude] doubleValue],[[[self checkin] endLongitude] doubleValue]);
 
